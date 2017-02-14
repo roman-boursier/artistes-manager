@@ -1,0 +1,21 @@
+/* Titre page */
+.page-title, .single-title {
+    display:none;
+}
+.custom-header h1{
+    padding: 60px 0px;
+    background: red;
+    text-align: center;
+    text-transform: uppercase;
+    color: #ffffff;
+}
+
+/**Trouver un autre système lorsque les row sont imbriquées*/
+.row .row {
+  margin-left:0 !important;
+  margin-right:0 !important;  
+}
+.entry-content .row {
+    padding:45px 0 0 0;
+}
+
