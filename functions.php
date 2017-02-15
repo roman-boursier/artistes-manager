@@ -44,3 +44,4 @@ require_once(get_template_directory().'/assets/functions/custom-post-artistes.ph
 
 // ACF Intégration
 require_once(get_template_directory().'/assets/functions/acf-plugin-integration.php'); //Plugin
+require_once(get_template_directory().'/assets/functions/acf-fields-integration.php'); //Plugin
