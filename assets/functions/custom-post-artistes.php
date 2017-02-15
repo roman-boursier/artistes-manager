@@ -19,21 +19,21 @@ function custom_post_artistes() {
 	register_post_type( 'artistes', /* (http://codex.wordpress.org/Function_Reference/register_post_type) */
 	 	// let's now add all the options for this post type
 		array('labels' => array(
-			'name' => __('Custom Types', 'jointswp'), /* This is the Title of the Group */
-			'singular_name' => __('Custom Post', 'jointswp'), /* This is the individual type */
-			'all_items' => __('All Custom Posts', 'jointswp'), /* the all items menu item */
+			'name' => __('Artists', 'jointswp'), /* This is the Title of the Group */
+			'singular_name' => __('Artists', 'jointswp'), /* This is the individual type */
+			'all_items' => __('All artists', 'jointswp'), /* the all items menu item */
 			'add_new' => __('Add New', 'jointswp'), /* The add new menu item */
-			'add_new_item' => __('Add New Custom Type', 'jointswp'), /* Add New Display Title */
+			'add_new_item' => __('Add New artist', 'jointswp'), /* Add New Display Title */
 			'edit' => __( 'Edit', 'jointswp' ), /* Edit Dialog */
-			'edit_item' => __('Edit Post Types', 'jointswp'), /* Edit Display Title */
-			'new_item' => __('New Post Type', 'jointswp'), /* New Display Title */
-			'view_item' => __('View Post Type', 'jointswp'), /* View Display Title */
+			'edit_item' => __('Edit artist', 'jointswp'), /* Edit Display Title */
+			'new_item' => __('New artist', 'jointswp'), /* New Display Title */
+			'view_item' => __('View artists', 'jointswp'), /* View Display Title */
 			'search_items' => __('Search Post Type', 'jointswp'), /* Search Custom Type Title */ 
 			'not_found' =>  __('Nothing found in the Database.', 'jointswp'), /* This displays if there are no entries yet */ 
 			'not_found_in_trash' => __('Nothing found in Trash', 'jointswp'), /* This displays if there is nothing in the trash */
 			'parent_item_colon' => ''
 			), /* end of arrays */
-			'description' => __( 'This is the example custom post type', 'jointswp' ), /* Custom Type Description */
+			'description' => __( 'This is the example artist', 'jointswp' ), /* Custom Type Description */
 			'public' => true,
 			'publicly_queryable' => true,
 			'exclude_from_search' => false,

@@ -57,12 +57,17 @@
 
                     function custom_header_image() {
                         if (has_post_thumbnail()) {
-                            return the_post_thumbnail_url();
+                            return the_post_thumbnail_url('full');
                         } else {
                             return '/images/thumbnail-default.jpg';
                         }
                     }
                     ?>
-                    <h1 style="background-image: url(<?php custom_header_image()?>);"><?php the_title(); ?></h1>
+                    <h1>
+                        <?php the_title(); ?>
+                        <div style="background-image: url(<?php custom_header_image() ?>);"></div>
+                    </h1>
+
+
                 </div> <!-- end article header -->
 
