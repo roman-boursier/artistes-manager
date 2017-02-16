@@ -42,28 +42,21 @@
         </div>
 
         <!-- DISCOGRAPHY -->
-        <div class="row clearfix">
+        <div class="row small-up-1 medium-up-2 large-up-3">
             <h2> <?php echo __('Discography :', 'jointswp') ?></h2>
             <?php if (have_rows('discographie')): ?>
-
-                <?php while (have_rows('discographie')): the_row(); ?>
-                    <div class="float-left">
-                        <div class="row">
-                            <div class="columns large-6">
+                    <?php while (have_rows('discographie')): the_row(); ?>
+                    <div class="column column-block">
                                 <?php $image_disk = wp_get_attachment_image_src(get_sub_field('image'), 'thumbnail'); ?>
-                                <img src="<?php echo $image_disk[0]; ?>" alt="<?php echo get_the_title(get_sub_field('image')) ?>" />
-                            </div>
-                            <div class="columns large-6">
+                                <img class="float-left" style="margin-right:10px" src="<?php echo $image_disk[0]; ?>" alt="<?php echo get_the_title(get_sub_field('image')) ?>" />
                                 <ul>
-                                    <li><?php the_sub_field('titre_de_labum'); ?></li>
+                                    <li><strong><?php the_sub_field('titre_de_labum'); ?></strong></li>
                                     <li><?php the_sub_field('artistes'); ?></li>
                                     <li><?php the_sub_field('label'); ?></li>
                                     <li><?php the_sub_field('annee_de_parution_'); ?></li>
                                 </ul>
-                            </div>
                         </div>
-                    </div>
-                <?php endwhile; ?>
+                    <?php endwhile; ?>
             <?php endif; ?>
         </div>
 
