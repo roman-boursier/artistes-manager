@@ -51,9 +51,10 @@ function custom_post_artistes() {
 	); /* end of register post type */
 	
 	/* this adds your post categories to your custom post type */
-	register_taxonomy_for_object_type('category', 'artistes');
+	//register_taxonomy_for_object_type('category', 'artistes');
 	/* this adds your post tags to your custom post type */
-	register_taxonomy_for_object_type('post_tag', 'custom_type');
+	//register_taxonomy_for_object_type('post_tag', 'custom_type');
+     
 	
 } 
 
@@ -65,21 +66,21 @@ function custom_post_artistes() {
 	http://codex.wordpress.org/Function_Reference/register_taxonomy
 	*/
 	
-	// now let's add custom categories (these act like categories)
-    register_taxonomy( 'custom_cat', 
-    	array('custom_type'), /* if you change the name of register_post_type( 'custom_type', then you have to change this */
+    // Catégorie d'artistes
+    register_taxonomy( 'artists-category', 
+    	array('artistes'), /* if you change the name of register_post_type( 'custom_type', then you have to change this */
     	array('hierarchical' => true,     /* if this is true, it acts like categories */             
     		'labels' => array(
-    			'name' => __( 'Custom Categories', 'jointswp' ), /* name of the custom taxonomy */
-    			'singular_name' => __( 'Custom Category', 'jointswp' ), /* single taxonomy name */
-    			'search_items' =>  __( 'Search Custom Categories', 'jointswp' ), /* search title for taxomony */
-    			'all_items' => __( 'All Custom Categories', 'jointswp' ), /* all title for taxonomies */
-    			'parent_item' => __( 'Parent Custom Category', 'jointswp' ), /* parent title for taxonomy */
-    			'parent_item_colon' => __( 'Parent Custom Category:', 'jointswp' ), /* parent taxonomy title */
-    			'edit_item' => __( 'Edit Custom Category', 'jointswp' ), /* edit custom taxonomy title */
-    			'update_item' => __( 'Update Custom Category', 'jointswp' ), /* update title for taxonomy */
-    			'add_new_item' => __( 'Add New Custom Category', 'jointswp' ), /* add new title for taxonomy */
-    			'new_item_name' => __( 'New Custom Category Name', 'jointswp' ) /* name title for taxonomy */
+    			'name' => __( 'Categories', 'jointswp' ), /* name of the custom taxonomy */
+    			'singular_name' => __( 'Category', 'jointswp' ), /* single taxonomy name */
+    			'search_items' =>  __( 'Search Categories', 'jointswp' ), /* search title for taxomony */
+    			'all_items' => __( 'All Categories', 'jointswp' ), /* all title for taxonomies */
+    			'parent_item' => __( 'Parent Category', 'jointswp' ), /* parent title for taxonomy */
+    			'parent_item_colon' => __( 'Parent Category:', 'jointswp' ), /* parent taxonomy title */
+    			'edit_item' => __( 'Edit Category', 'jointswp' ), /* edit custom taxonomy title */
+    			'update_item' => __( 'Update Category', 'jointswp' ), /* update title for taxonomy */
+    			'add_new_item' => __( 'Add New Category', 'jointswp' ), /* add new title for taxonomy */
+    			'new_item_name' => __( 'New Custom Name', 'jointswp' ) /* name title for taxonomy */
     		),
     		'show_admin_column' => true, 
     		'show_ui' => true,
@@ -88,6 +89,7 @@ function custom_post_artistes() {
     	)
     );   
     
+  
 	// now let's add custom tags (these act like categories)
     register_taxonomy( 'custom_tag', 
     	array('custom_type'), /* if you change the name of register_post_type( 'custom_type', then you have to change this */

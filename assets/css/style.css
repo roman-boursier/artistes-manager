@@ -4700,6 +4700,11 @@ to display none.
 .menu a {
   color: #fefefe; }
 
+/**********PAGES********************/
+/*Archive artists grid*/
+.post-type-archive-artistes h3 {
+  font-size: 1em; }
+
 /*****HEADER CUSTOMISATIONS*******/
 .page-title, .single-title {
   display: none; }

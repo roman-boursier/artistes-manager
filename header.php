@@ -64,7 +64,11 @@
                     }
                     ?>
                     <h1>
-                        <?php the_title(); ?>
+                        <?php if(is_single()) : ?> 
+                            <?php the_title(); ?>
+                            <?php elseif(is_archive()):?>
+                            <?php post_type_archive_title(); ?>
+                        <?php endif ?>
                         <div style="background-image: url(<?php custom_header_image() ?>);"></div>
                     </h1>
 
