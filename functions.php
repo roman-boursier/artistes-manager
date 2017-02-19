@@ -45,3 +45,15 @@ require_once(get_template_directory().'/assets/functions/custom-post-artistes.ph
 // ACF Intégration
 require_once(get_template_directory().'/assets/functions/acf-plugin-integration.php'); //Plugin
 //require_once(get_template_directory().'/assets/functions/acf-fields-integration.php'); //Plugin
+
+
+function wp_body_classes( $classes ) {
+    if(is_front_page()){
+         $classes[] = 'overlay';
+    }
+    return $classes;
+   
+}
+add_filter( 'body_class','wp_body_classes' );
+
+

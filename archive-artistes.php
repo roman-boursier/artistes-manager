@@ -13,7 +13,7 @@
             
                 <div class="row small-up-2 medium-up-4 large-up-6">
                     <?php while (have_posts()) : the_post(); ?> 
-                        <?php if (get_field('est-ce_un_ensemble') !== true) : ?>
+                        <?php if (has_term('solo','artists-type')) : ?>
                             <?php get_template_part('parts/loop', 'archive-grid-artistes'); ?> 
                         <?php endif ?>
                 <?php endwhile; ?>
@@ -23,7 +23,7 @@
                 <h2><?php echo __('Groups :', 'jointswp') ?></h2>
                 <div class="row small-up-2 medium-up-4 large-up-6">
                 <?php while (have_posts()) : the_post(); ?>
-                        <?php if (get_field('est-ce_un_ensemble') == true) : ?>
+                        <?php if (has_term('ensemble','artists-type')) : ?>
                             <?php get_template_part('parts/loop', 'archive-grid-artistes'); ?>
                         <?php endif ?>
                     <?php endwhile; ?>

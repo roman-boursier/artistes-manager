@@ -4701,6 +4701,10 @@ to display none.
   color: #fefefe; }
 
 /**********PAGES********************/
+/*Home*/
+.home .copyright {
+  display: none; }
+
 /*Archive artists grid*/
 .post-type-archive-artistes h3 {
   font-size: 1em; }
@@ -4735,6 +4739,17 @@ to display none.
   background-position: center; }
 
 .custom-header h1 > div:after {
+  content: "";
+  background-color: #000;
+  opacity: .6; }
+
+.overlay:after {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
   content: "";
   background-color: #000;
   opacity: .6; }

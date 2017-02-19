@@ -12,7 +12,7 @@
                                 
                                 <header class="article-header">
                                     <h3 class="title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><strong><?php the_title(); ?></strong></a></h3>
-                                     <?php echo get_the_term_list( $post->ID, 'artists-category', '<span>', ' , ', '</span>' ) ?> 
+                                     <?php echo get_the_term_list( $post->ID, 'instruments', '<span>', ' , ', '</span>' ) ?> 
 				</header> <!-- end article header -->	
                                
 								    							

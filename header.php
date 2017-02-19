@@ -51,27 +51,25 @@
                     <?php get_template_part('parts/nav', 'offcanvas-topbar'); ?>
 
                 </header> <!-- end .header -->
+                <?php if (!is_front_page()): ?>
+                    <div class="custom-header" class="row">
+                        <?php
 
-                <div class="custom-header" class="row">
-                    <?php
-
-                    function custom_header_image() {
-                        if (has_post_thumbnail()) {
-                            return the_post_thumbnail_url('full');
-                        } else {
-                            return '/images/thumbnail-default.jpg';
+                        function custom_header_image() {
+                            if (has_post_thumbnail()) {
+                                return the_post_thumbnail_url('full');
+                            } else {
+                                return '/images/thumbnail-default.jpg';
+                            }
                         }
-                    }
-                    ?>
-                    <h1>
-                        <?php if(is_single()) : ?> 
-                            <?php the_title(); ?>
-                            <?php elseif(is_archive()):?>
-                            <?php post_type_archive_title(); ?>
-                        <?php endif ?>
-                        <div style="background-image: url(<?php custom_header_image() ?>);"></div>
-                    </h1>
-
-
-                </div> <!-- end article header -->
-
+                        ?>
+                        <h1>
+                            <?php if (is_single()) : ?> 
+                                <?php the_title(); ?>
+                            <?php elseif (is_archive()): ?>
+                                <?php post_type_archive_title(); ?>
+                            <?php endif ?>
+                            <div style="background-image: url(<?php custom_header_image() ?>);"></div>
+                        </h1> 
+                    </div> <!-- end article header -->
+                <?php endif; ?>
