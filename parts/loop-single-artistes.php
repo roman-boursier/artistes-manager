@@ -74,32 +74,7 @@
                 <!-- Groups -->
                 <div class="row">
                     <div class="colums">
-                        <?php
-                        
-                        $posts = get_field('ensembles');
-                        if ($posts):
-                            ?>
-                            <h2><?php echo __('Groups', 'joins_wp'); ?> </h2>
-                            <ul>
-                                <?php
-                                foreach ($posts as $post):
-                                    setup_postdata($post);
-                                    ?>
-                                    <li>
-                                        <?php the_post_thumbnail(array(50, 50)); ?>
-                                        <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-                                    </li>
-                                <?php endforeach; ?>
-                            </ul>
-
-                            <?php
-                            wp_reset_postdata(); 
-                        endif;
-                        ?>
-                        <?php
-                        
-                        ?>    
-                            
+                        <?php include('loop-ensembles.php');?>
                     </div>
                 </div>    
 
@@ -110,7 +85,7 @@
                         <?php if (have_rows('liens_et_telechargements')): ?>
                             <ul>
                                 <?php while (have_rows('liens_et_telechargements')): the_row(); ?>
-                                    <li><?php the_sub_field('liens') ?></li>
+                                <li><a href="<?php the_sub_field('liens') ?>" target="_blank"><?php the_sub_field('nom_du_lien') ?></a></li>
                                 <?php endwhile; ?>
                             </ul>
                         <?php endif; ?>
