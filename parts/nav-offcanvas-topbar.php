@@ -1,10 +1,12 @@
 <!-- By default, this menu will use off-canvas for small
 	 and a topbar for medium-up -->
-
+<?php
+$image = get_field('logo_du_site', 'option');
+?>
 <div class="top-bar" id="top-bar-menu">
 	<div class="top-bar-left float-left">
 		<ul class="menu">
-			<li><a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a></li>
+			<li><a href="<?php echo home_url(); ?>"><img src="<?php echo $image['url']; ?>" alt="<?php bloginfo('name'); ?>" width="150"/></a></li>
 		</ul>
 	</div>
 	<div class="top-bar-right show-for-medium">

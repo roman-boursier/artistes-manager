@@ -42,6 +42,12 @@ require_once(get_template_directory() . '/assets/functions/custom-post-artistes.
 require_once(get_template_directory() . '/assets/functions/acf-plugin-integration.php'); //Plugin
 //require_once(get_template_directory().'/assets/functions/acf-fields-integration.php'); //Plugin
 
+if( function_exists('acf_add_options_page') ) {
+	
+	acf_add_options_page();
+	
+}
+
 /*A déplacer ailleurs*/
 function home_height() {
     if (is_front_page()) {

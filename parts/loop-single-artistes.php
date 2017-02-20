@@ -21,22 +21,21 @@
         <div class="row">
             <div class="colums">
                 <h2> <?php echo __('Média gallery :', 'jointswp') ?></h2>
-                <?php if (get_field('galerie_media')): ?>
-                    <?php $images = get_field('galerie_media'); ?>
-                    <?php if ($images): ?>
-                        <div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit>
-                            <ul class="orbit-container">
-                                <button class="orbit-previous"><span class="show-for-sr">Previous Slide</span> &#9664;&#xFE0E;</button>
-                                <button class="orbit-next"><span class="show-for-sr">Next Slide</span> &#9654;&#xFE0E;</button>
-                                <?php foreach ($images as $image): ?>
-                                    <li class="orbit-slide">
-                                        <img src="<?php echo $image['sizes']['medium']; ?>" alt="<?php echo $image['alt']; ?>" />
-                                        <p><?php echo $image['caption']; ?></p>
-                                    </li>
-                                <?php endforeach; ?>
-                            </ul>
-                        </div>
-                    <?php endif; ?>
+                <?php if (have_rows('galerie_media')): ?>
+                
+                    <div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit>
+                        <ul class="orbit-container">
+                            <button class="orbit-previous"><span class="show-for-sr">Previous Slide</span> &#9664;&#xFE0E;</button>
+                            <button class="orbit-next"><span class="show-for-sr">Next Slide</span> &#9654;&#xFE0E;</button>
+                            <?php while (have_rows('galerie_media')): the_row(); ?>
+                                <li class="orbit-slide">
+                                    <?php $image = get_sub_field('image');?>
+                                    <img src="<?php echo $image['url'];?>" alt="" />
+                                   
+                                </li>
+                            <?php endwhile; ?>
+                        </ul>
+                    </div>          
                 <?php endif; ?>
             </div>
         </div>
@@ -74,7 +73,7 @@
                 <!-- Groups -->
                 <div class="row">
                     <div class="colums">
-                        <?php include('loop-ensembles.php');?>
+                        <?php include('loop-ensembles.php'); ?>
                     </div>
                 </div>    
 
@@ -85,7 +84,7 @@
                         <?php if (have_rows('liens_et_telechargements')): ?>
                             <ul>
                                 <?php while (have_rows('liens_et_telechargements')): the_row(); ?>
-                                <li><a href="<?php the_sub_field('liens') ?>" target="_blank"><?php the_sub_field('nom_du_lien') ?></a></li>
+                                    <li><a href="<?php the_sub_field('liens') ?>" target="_blank"><?php the_sub_field('nom_du_lien') ?></a></li>
                                 <?php endwhile; ?>
                             </ul>
                         <?php endif; ?>

@@ -4697,6 +4697,11 @@ to display none.
     display: none; } }
 
 /**********MENU**********************/
+header.header {
+  width: 100%;
+  position: absolute;
+  top: 0; }
+
 .menu a {
   color: #fefefe; }
 
@@ -4717,8 +4722,6 @@ header {
   display: none; }
 
 .custom-header {
-  top: -54px;
-  position: relative;
   z-index: -1; }
 
 .custom-header h1 {
