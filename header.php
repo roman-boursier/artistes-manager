@@ -69,7 +69,7 @@
                             <?php elseif (is_archive()): ?>
                                 <?php post_type_archive_title(); ?>
                             <?php endif ?>
-                            <div style="background-image: url(<?php custom_header_image() ?>);"></div>
+                            <div class="overlay" style="background-image: url(<?php custom_header_image() ?>);"></div>
                         </h1> 
                     </div> <!-- end article header -->
                 <?php endif; ?>

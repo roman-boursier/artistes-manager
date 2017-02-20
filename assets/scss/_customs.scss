@@ -3,8 +3,8 @@
     color:$white;
 }
 
-/**********PAGES********************/
 
+/**********PAGES********************/
 /*Home*/
 .home .copyright {
     display:none;
@@ -15,9 +15,10 @@
     font-size:1em;
 }
 
-
-
 /*****HEADER CUSTOMISATIONS*******/
+header {
+    z-index: 2;
+}
 .page-title, .single-title {
     display:none;
 }
@@ -34,7 +35,7 @@
     color: #ffffff;
 }
 
-.custom-header h1 > div, .custom-header h1 > div:after{
+.custom-header h1 > div {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -49,26 +50,31 @@
     background-position:center;
 }
 
-.custom-header h1 > div:after {
-    content:"";
-    background-color:#000;
-    opacity: .6;  
+
+/*****************UTILITIES**********************/
+/*fullscreen*/
+.fullscreen body {
+    overflow-y: hidden;
+}
+.fullscreen, .fullscreen body, .fullscreen .off-canvas-wrapper, .fullscreen .off-canvas-content  {
+    height:100%;
 }
 
+/*overlay*/
 .overlay:after {
-     position: absolute;
+    position: absolute;
     width: 100%;
     height: 100%;
-    top: 0;
+    top:0;
     left:0;
-    z-index: -1;
+    z-index: -2;
     content:"";
     background-color:#000;
     opacity: .6;  
 }
 
-
-/**Trouver un autre système lorsque les row sont imbriquées*/
+/*****************AUTRES**********************/
+/*Ajustement des row imbriquées*/
 .row .row {
     margin-left:0 !important;
     margin-right:0 !important;  
@@ -76,4 +82,3 @@
 .entry-content .row {
     padding:45px 0 0 0;
 }
-
