@@ -40,6 +40,7 @@
 //  35. Title Bar
 //  36. Tooltip
 //  37. Top Bar
+//  38. Flex Video
 
 @import '../../vendor/foundation-sites/scss/util/util';
 
@@ -491,7 +492,7 @@ $progress-radius: $global-radius;
 
 $responsive-embed-margin-bottom: rem-calc(16);
 $responsive-embed-ratios: (
-  default: 4 by 3,
+  default: 16 by 9,
   widescreen: 16 by 9,
 );
 
@@ -618,4 +619,3 @@ $topbar-submenu-background: $topbar-background;
 $topbar-title-spacing: 0.45rem 1rem 0 1rem;
 $topbar-input-width: 200px;
 $topbar-unstack-breakpoint: medium;
-

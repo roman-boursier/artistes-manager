@@ -19,23 +19,27 @@
 
         <!-- GALLERY MEDIA -->
         <div class="row">
-            <div class="colums">
                 <h2> <?php echo __('Média gallery :', 'jointswp') ?></h2>
                 <?php if (have_rows('galerie_media')): ?>
-                
+                <div class="small-10 small-centered colums">
                     <div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit>
                         <ul class="orbit-container">
                             <button class="orbit-previous"><span class="show-for-sr">Previous Slide</span> &#9664;&#xFE0E;</button>
                             <button class="orbit-next"><span class="show-for-sr">Next Slide</span> &#9654;&#xFE0E;</button>
                             <?php while (have_rows('galerie_media')): the_row(); ?>
                                 <li class="orbit-slide">
-                                    <?php $image = get_sub_field('image');?>
-                                    <img src="<?php echo $image['url'];?>" alt="" />
-                                   
+                                    <?php if (get_sub_field('image_ou_video') == 'image'): ?>
+                                        <?php $image = get_sub_field('image'); ?>
+                                        <img src="<?php echo $image['url']; ?>" alt="" />
+                                    <?php else: ?>
+                                        <div class="flex-video">
+                                            <iframe width="560" height="315" src="http://www.youtube.com/embed/<?php echo get_sub_field('lien_youtube'); ?>"   frameborder="0" allowfullscreen></iframe>
+                                        </div>
+                                    <?php endif; ?>
                                 </li>
                             <?php endwhile; ?>
                         </ul>
-                    </div>          
+                    </div>
                 <?php endif; ?>
             </div>
         </div>
