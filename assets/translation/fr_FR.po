@@ -1,380 +1,272 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: wp theme bones\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-02 22:11+0100\n"
-"PO-Revision-Date: \n"
-"Language-Team: fulgor <frag.fulgor@gmail.com>\n"
-"Language-Team: fulgor <frag.fulgor@gmail.com>\n"
+"Project-Id-Version: test\n"
+"POT-Creation-Date: 2017-02-22 17:57+0100\n"
+"PO-Revision-Date: 2017-02-22 18:00+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: en\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-SourceCharset: utf-8\n"
-"X-Poedit-KeywordsList: __;_e;_n\n"
-"X-Poedit-Basepath: /home/fulgor/GIT/bones\n"
-"Last-Translator: \n"
-"X-Poedit-SearchPath-0: /home/fulgor/GIT/bones\n"
+"X-Generator: Poedit 1.8.6\n"
+"X-Poedit-Basepath: ../..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: .git\n"
+"X-Poedit-SearchPathExcluded-1: node_modules\n"
+"X-Poedit-SearchPathExcluded-2: bower_components\n"
+"X-Poedit-SearchPathExcluded-3: advanced-custom-fields-pro\n"
+"X-Poedit-SearchPathExcluded-4: vendor\n"
 
-#: comments.php:12
-msgid "This post is password protected. Enter the password to view comments."
-msgstr "Cet article est protégé par un mot de passe. Entrer le mot de passe pour voir les commentaires."
+#: archive-artistes.php:12
+msgid "Artists :"
+msgstr ""
 
-#: comments.php:23
-msgid "Response"
-msgstr "Réponse"
+#: archive-artistes.php:23
+msgid "Groups :"
+msgstr ""
 
-#: comments.php:24
-msgid "Responses"
-msgstr "Réponses"
+#: assets/functions/admin.php:35
+msgid "The RSS Feed is either empty or unavailable."
+msgstr ""
 
-#: comments.php:25
-msgid "One"
-msgstr "Un"
+#: assets/functions/admin.php:39
+msgid "j F Y @ g:i a"
+msgstr ""
 
-#: comments.php:26
-msgid "No"
-msgstr "Aucun"
+#: assets/functions/admin.php:51
+msgid "Custom RSS Feed (Customize in admin.php)"
+msgstr ""
 
-#: comments.php:32
-msgid "to"
-msgstr "à"
+#: assets/functions/cleanup.php:74
+msgid "Read"
+msgstr ""
 
-#: comments.php:59
-msgid "Comments are closed."
-msgstr "Les commentaires sont clos."
+#: assets/functions/cleanup.php:74
+msgid "... Read more &raquo;"
+msgstr ""
 
-#: comments.php:70
-msgid "Leave a Reply"
-msgstr "Laisser une réponse"
-
-#: comments.php:70
+#: assets/functions/cleanup.php:96
 #, php-format
-msgid "Leave a Reply to %s"
-msgstr "Laisser une réponse à %s"
+msgid "Posts by %s"
+msgstr ""
 
-#: comments.php:78
-msgid "You must be"
-msgstr "Vous devez être"
-
-#: comments.php:78
-msgid "logged in"
-msgstr "identifié"
-
-#: comments.php:78
-msgid "to post a comment"
-msgstr "pour laisser un commentaire."
-
-#: comments.php:86
-msgid "Logged in as"
-msgstr "Connecté comme"
-
-#: comments.php:86
-msgid "Log out of this account"
-msgstr "Se déconnecter de ce compte"
-
-#: comments.php:86
-msgid "Log out"
-msgstr "Se déconnecter"
-
-#: comments.php:93
-msgid "Name"
-msgstr "Nom"
-
-#: comments.php:93
-#: comments.php:98
-msgid "(required)"
-msgstr "(requis)"
-
-#: comments.php:94
-msgid "Your Name"
-msgstr "Votre nom"
-
-#: comments.php:98
-msgid "Email"
-msgstr "Email"
-
-#: comments.php:99
-msgid "Your Email"
-msgstr "Votre Email"
-
-#: comments.php:100
-msgid "will not be published"
-msgstr "ne sera pas publié"
-
-#: comments.php:104
-msgid "Website"
-msgstr "Site internet"
-
-#: comments.php:105
-msgid "Your Website"
-msgstr "Votre site internet"
-
-#: comments.php:112
-msgid "Your Comment Here..."
-msgstr "Vote commentaire ici..."
-
-#: comments.php:115
-msgid "Submit Comment"
-msgstr "Soumettre un commentaire"
-
-#: comments.php:120
-msgid "You can use these tags"
-msgstr "Vous pouvez utiliser ces tags"
-
-#: header.php:23
+#: assets/functions/comments.php:17
 #, php-format
-msgid "Page %s"
-msgstr "Page %s"
+msgid "%s"
+msgstr ""
 
-#: taxonomy-custom_cat.php:22
-#: archive.php:9
-msgid "Posts Categorized:"
-msgstr "Archive des articles sous la catégorie :"
+#: assets/functions/comments.php:18
+msgid " F jS, Y - g:ia"
+msgstr ""
 
-#: taxonomy-custom_cat.php:32
-#: embed-post_meta.php:1
-#: single-custom_type.php:30
-msgid "Posted"
-msgstr "Publié"
-
-#: taxonomy-custom_cat.php:32
-#: embed-post_meta.php:1
-#: single-custom_type.php:30
-msgid "by"
-msgstr "par"
-
-#: taxonomy-custom_cat.php:32
-#: embed-post_meta.php:1
-#: single-custom_type.php:30
-msgid "filed under"
-msgstr "dans la catégorie"
-
-#: taxonomy-custom_cat.php:41
-msgid "Read more"
-msgstr "En lire plus"
-
-#: functions.php:103
+#: assets/functions/comments.php:19
 msgid "(Edit)"
-msgstr "(Editer)"
+msgstr ""
 
-#: functions.php:107
-msgid "Your comment is awaiting moderation."
-msgstr "Votre commentaire est en attente de modération"
+#: assets/functions/custom-post-artistes.php:22
+#: assets/functions/custom-post-artistes.php:23
+msgid "Artists"
+msgstr ""
 
-#: functions.php:124
-msgid "Search for:"
-msgstr "Recherche pour :"
+#: assets/functions/custom-post-artistes.php:24
+msgid "All artists"
+msgstr ""
 
-#: functions.php:125
-msgid "Search the Site..."
-msgstr "Chercher sur le site..."
-
-#: 404.php:11
-msgid "Epic 404 - Article Not Found"
-msgstr "404 Epique - Article non trouvé"
-
-#: 404.php:17
-msgid "The article you were looking for was not found, but maybe try looking again!"
-msgstr "L'article que vous demandez est inexistant, effectuez plutôt une recherche"
-
-#: search.php:7
-msgid "Search Results for:"
-msgstr "Résultats de recherche pour :"
-
-#: search.php:23
-msgid "Read more on"
-msgstr "En lire plus sur"
-
-#: archive.php:13
-msgid "Posts Tagged:"
-msgstr "Articles taggés :"
-
-#: archive.php:17
-#: author.php:8
-msgid "Posts By:"
-msgstr "Articles par :"
-
-#: archive.php:21
-msgid "Daily Archives:"
-msgstr "Archives quotidiennes :"
-
-#: archive.php:25
-msgid "Monthly Archives:"
-msgstr "Archives mensuelles :"
-
-#: archive.php:29
-msgid "Yearly Archives:"
-msgstr "Archives annuelles :"
-
-#: single-custom_type.php:43
-msgid "Custom Tags"
-msgstr "Tags personnalisés"
-
-#: embed-tags.php:3
-msgid "Tag"
-msgstr "Tag"
-
-#: embed-tags.php:3
-msgid "Tags"
-msgstr "Tags"
-
-#: image.php:20
-msgid "Read the rest of this entry"
-msgstr "Lire la suite de cette article"
-
-#: image.php:38
-msgid "Sorry, no attachments matched your criteria."
-msgstr "Désolé, aucun attachement ne correspond à vos critères."
-
-#: embed-prev_next.php:3
-msgid "&laquo; Older Entries"
-msgstr "&laquo; Anciens articles"
-
-#: embed-prev_next.php:4
-msgid "Newer Entries &raquo;"
-msgstr "Nouveaux articles &raquo;"
-
-#: footer.php:9
-msgid "is powered by"
-msgstr "est propulsé par"
-
-#: embed-not_found.php:3
-msgid "Not Found"
-msgstr "Non trouvé"
-
-#: embed-not_found.php:6
-msgid "Sorry, but the requested resource was not found on this site."
-msgstr "Désolé mais la ressource recherchée est introuvable sur ce site."
-
-#: sidebar.php:15
-msgid "Please activate some Widgets."
-msgstr "Veuillez activer quelques widgets."
-
-#: library/bones.php:52
-msgid "Read more &raquo;"
-msgstr "En lire plus &raquo;"
-
-#: library/custom-post-type.php:24
-msgid "Custom Types"
-msgstr "Types personalisés"
-
-#: library/custom-post-type.php:25
-msgid "Custom Post"
-msgstr "Article personalisé"
-
-#: library/custom-post-type.php:26
+#: assets/functions/custom-post-artistes.php:25
 msgid "Add New"
-msgstr "Ajouter nouveau"
+msgstr ""
 
-#: library/custom-post-type.php:27
-msgid "Add New Custom Type"
-msgstr "Ajouter un nouveau type personalisé"
+#: assets/functions/custom-post-artistes.php:26
+msgid "Add New artist"
+msgstr ""
 
-#: library/custom-post-type.php:28
+#: assets/functions/custom-post-artistes.php:27
 msgid "Edit"
-msgstr "Editer"
+msgstr ""
 
-#: library/custom-post-type.php:29
-msgid "Edit Post Types"
-msgstr "Editer les types d'article"
+#: assets/functions/custom-post-artistes.php:28
+msgid "Edit artist"
+msgstr ""
 
-#: library/custom-post-type.php:30
-msgid "New Post Type"
-msgstr "Nouveau type d'article"
+#: assets/functions/custom-post-artistes.php:29
+msgid "New artist"
+msgstr ""
 
-#: library/custom-post-type.php:31
-msgid "View Post Type"
-msgstr "Voir le type d'article"
+#: assets/functions/custom-post-artistes.php:30
+msgid "View artists"
+msgstr ""
 
-#: library/custom-post-type.php:32
+#: assets/functions/custom-post-artistes.php:31
 msgid "Search Post Type"
-msgstr "Rechercher un type d'article"
+msgstr ""
 
-#: library/custom-post-type.php:33
+#: assets/functions/custom-post-artistes.php:32
 msgid "Nothing found in the Database."
-msgstr "Rien trouvé dans la base de données"
+msgstr ""
 
-#: library/custom-post-type.php:34
+#: assets/functions/custom-post-artistes.php:33
 msgid "Nothing found in Trash"
-msgstr "Rien trouvé dans la corbeille"
+msgstr ""
 
-#: library/custom-post-type.php:37
-msgid "This is the example custom post type"
-msgstr "Ceci est un exemple de type d'article personalisé"
+#: assets/functions/custom-post-artistes.php:36
+msgid "This is the example artist"
+msgstr ""
 
-#: library/custom-post-type.php:73
-msgid "Custom Categories"
-msgstr "Catégories personalisées"
+#: assets/functions/custom-post-artistes.php:70
+msgid "Instruments"
+msgstr ""
 
-#: library/custom-post-type.php:74
-msgid "Custom Category"
-msgstr "Catégorie personalisée"
+#: assets/functions/custom-post-artistes.php:71
+msgid "instruments"
+msgstr ""
 
-#: library/custom-post-type.php:75
-msgid "Search Custom Categories"
-msgstr "Rechercher dans les catégories personalisées"
+#: assets/functions/custom-post-artistes.php:72
+msgid "Search Instruments"
+msgstr ""
 
-#: library/custom-post-type.php:76
-msgid "All Custom Categories"
-msgstr "Toutes les catégories personalisées"
+#: assets/functions/custom-post-artistes.php:73
+msgid "All Instruments"
+msgstr ""
 
-#: library/custom-post-type.php:77
-msgid "Parent Custom Category"
-msgstr "Catégorie personalisée parente"
+#: assets/functions/custom-post-artistes.php:74
+msgid "Parent Instruments"
+msgstr ""
 
-#: library/custom-post-type.php:78
-msgid "Parent Custom Category:"
-msgstr "Catégorie personalisée parente :"
+#: assets/functions/custom-post-artistes.php:75
+msgid "Parent Instruments:"
+msgstr ""
 
-#: library/custom-post-type.php:79
-msgid "Edit Custom Category"
-msgstr "Editer la catégorie personalisée"
+#: assets/functions/custom-post-artistes.php:76
+msgid "Edit Instruments"
+msgstr ""
 
-#: library/custom-post-type.php:80
-msgid "Update Custom Category"
-msgstr "Mettre à jour la catégorie personalisée"
+#: assets/functions/custom-post-artistes.php:77
+msgid "Update Instruments"
+msgstr ""
 
-#: library/custom-post-type.php:81
-msgid "Add New Custom Category"
-msgstr "Ajouter une catégorie personalisée"
+#: assets/functions/custom-post-artistes.php:78
+msgid "Add New Instruments"
+msgstr ""
 
-#: library/custom-post-type.php:82
-msgid "New Custom Category Name"
-msgstr "Nouveau libellé de catégorie personalisée"
+#: assets/functions/custom-post-artistes.php:79
+msgid "New Instruments"
+msgstr ""
 
-#: library/custom-post-type.php:95
-msgid "Custom Tag"
-msgstr "Tag personnalisé"
+#: assets/functions/custom-post-artistes.php:92
+#: assets/functions/custom-post-artistes.php:93
+msgid "type"
+msgstr ""
 
-#: library/custom-post-type.php:96
-msgid "Search Custom Tags"
-msgstr "Rechercher un tag personalisé"
+#: assets/functions/custom-post-artistes.php:94
+msgid "Search type"
+msgstr ""
 
-#: library/custom-post-type.php:97
-msgid "All Custom Tags"
-msgstr "Tous les tags personalisés"
+#: assets/functions/custom-post-artistes.php:95
+msgid "All type"
+msgstr ""
 
-#: library/custom-post-type.php:98
-msgid "Parent Custom Tag"
-msgstr "Tag personalisé parent"
+#: assets/functions/custom-post-artistes.php:96
+msgid "Parent type"
+msgstr ""
 
-#: library/custom-post-type.php:99
-msgid "Parent Custom Tag:"
-msgstr "Tag personalisé parent :"
+#: assets/functions/custom-post-artistes.php:97
+msgid "Parent type:"
+msgstr ""
 
-#: library/custom-post-type.php:100
-msgid "Edit Custom Tag"
-msgstr "Editer le tag personalisé"
+#: assets/functions/custom-post-artistes.php:98
+msgid "Edit type"
+msgstr ""
 
-#: library/custom-post-type.php:101
-msgid "Update Custom Tag"
-msgstr "Mettre à jour le tag personalisé"
+#: assets/functions/custom-post-artistes.php:99
+msgid "Update type"
+msgstr ""
 
-#: library/custom-post-type.php:102
-msgid "Add New Custom Tag"
-msgstr "Ajouter un nouveau tag personalisé"
+#: assets/functions/custom-post-artistes.php:100
+msgid "Add type"
+msgstr ""
 
-#: library/custom-post-type.php:103
-msgid "New Custom Tag Name"
-msgstr "Libellé du nouveau tag personalisé"
+#: assets/functions/custom-post-artistes.php:101
+msgid "New type"
+msgstr ""
 
+#: assets/functions/menu.php:5
+msgid "The Main Menu"
+msgstr ""
+
+#: assets/functions/menu.php:6 assets/functions/menu.php:55
+msgid "Footer Links"
+msgstr ""
+
+#: assets/functions/page-navi.php:35
+msgid "First"
+msgstr ""
+
+#: assets/functions/page-navi.php:39
+msgid "Previous"
+msgstr ""
+
+#: assets/functions/page-navi.php:49
+msgid "Next"
+msgstr ""
+
+#: assets/functions/page-navi.php:52
+msgid "Last"
+msgstr ""
+
+#: assets/functions/related-posts.php:18
+msgid "<h4>Related Posts</h4>"
+msgstr ""
+
+#: assets/functions/sidebar.php:6
+msgid "Sidebar 1"
+msgstr ""
+
+#: assets/functions/sidebar.php:7
+msgid "The first (primary) sidebar."
+msgstr ""
+
+#: assets/functions/sidebar.php:16
+msgid "Offcanvas"
+msgstr ""
+
+#: assets/functions/sidebar.php:17
+msgid "The offcanvas sidebar."
+msgstr ""
+
+#: parts/loop-archive-grid-artistes.php:10 parts/loop-archive-grid.php:26
+#: parts/loop-archive.php:9
+msgid "Read more..."
+msgstr ""
+
+#: parts/loop-archive.php:13 parts/loop-single-artistes.php:107
+#: parts/loop-single.php:15
+msgid "Tags:"
+msgstr ""
+
+#: parts/loop-ensembles.php:6
+msgid "Groups"
+msgstr "Ensembles"
+
+#: parts/loop-single-artistes.php:13
+msgid "Biography :"
+msgstr "Biographie"
+
+#: parts/loop-single-artistes.php:22
+msgid "Média gallery :"
+msgstr "Galerie média"
+
+#: parts/loop-single-artistes.php:52
+msgid "Discography :"
+msgstr "Discographie"
+
+#: parts/loop-single-artistes.php:74
+msgid "Float"
+msgstr "Agenda"
+
+#: parts/loop-single-artistes.php:90
+msgid "Links and downloads"
+msgstr "Liens et téléchargements"

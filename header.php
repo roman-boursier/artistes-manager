@@ -64,10 +64,10 @@
                         }
                         ?>
                         <h1>
-                            <?php if (is_single()) : ?> 
+                            <?php if (is_archive()) : ?> 
+                                 <?php post_type_archive_title(); ?>
+                            <?php else: ?>
                                 <?php the_title(); ?>
-                            <?php elseif (is_archive()): ?>
-                                <?php post_type_archive_title(); ?>
                             <?php endif ?>
                             <div class="overlay" style="background-image: url(<?php custom_header_image() ?>);"></div>
                         </h1> 

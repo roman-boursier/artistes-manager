@@ -40,7 +40,6 @@
 //  35. Title Bar
 //  36. Tooltip
 //  37. Top Bar
-//  38. Flex Video
 
 @import '../../vendor/foundation-sites/scss/util/util';
 
@@ -48,7 +47,7 @@
 // ---------
 
 $global-font-size: 100%;
-$global-width: rem-calc(1200);
+$global-width: rem-calc(1000);
 $global-lineheight: 1.5;
 $foundation-palette: (
   primary: #1779ba,

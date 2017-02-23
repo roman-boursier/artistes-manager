@@ -54,6 +54,12 @@ header {
 }
 
 
+/*****************ORBIT SLIDER********************/
+.orbit {
+    background:lightgrey;
+}
+
+
 /*****************UTILITIES**********************/
 /*fullscreen*/
 .fullscreen body {
@@ -75,6 +81,19 @@ header {
     background-color:#000;
     opacity: .6;  
 }
+.image-container::before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+
+.image-container {
+    vertical-align: middle;
+    display: inline-block;
+}
+
+
 
 /*****************AUTRES**********************/
 /*Ajustement des row imbriquées*/
