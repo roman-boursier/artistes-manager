@@ -23,86 +23,6 @@
                 "delay": 0
             },
             {
-                "key": "field_58a05b8f4652b",
-                "label": "Galerie m\u00e9dia",
-                "name": "galerie_media",
-                "type": "repeater",
-                "instructions": "",
-                "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "",
-                    "class": "",
-                    "id": ""
-                },
-                "collapsed": "",
-                "min": 0,
-                "max": 0,
-                "layout": "table",
-                "button_label": "Ajouter un media",
-                "sub_fields": [
-                    {
-                        "key": "field_58ab1dbde3751",
-                        "label": "Image_gallery",
-                        "name": "image",
-                        "type": "image",
-                        "instructions": "",
-                        "required": 0,
-                        "conditional_logic": 0,
-                        "wrapper": {
-                            "width": "",
-                            "class": "",
-                            "id": ""
-                        },
-                        "return_format": "array",
-                        "preview_size": "thumbnail",
-                        "library": "all",
-                        "min_width": "",
-                        "min_height": "",
-                        "min_size": "",
-                        "max_width": "",
-                        "max_height": "",
-                        "max_size": "",
-                        "mime_types": ""
-                    },
-                    {
-                        "key": "field_58ab1df4e3752",
-                        "label": "Description",
-                        "name": "description",
-                        "type": "text",
-                        "instructions": "",
-                        "required": 0,
-                        "conditional_logic": 0,
-                        "wrapper": {
-                            "width": "",
-                            "class": "",
-                            "id": ""
-                        },
-                        "default_value": "",
-                        "placeholder": "",
-                        "prepend": "",
-                        "append": "",
-                        "maxlength": ""
-                    },
-                    {
-                        "key": "field_58ab1e08e3753",
-                        "label": "Identifiant youtube",
-                        "name": "identifiant_youtube",
-                        "type": "video",
-                        "instructions": "Optionnel : \u00e0 renseigner seulement dans le cas d'une vid\u00e9o",
-                        "required": 0,
-                        "conditional_logic": 0,
-                        "wrapper": {
-                            "width": "",
-                            "class": "",
-                            "id": ""
-                        },
-                        "preview_type": "embed",
-                        "return_value": "url"
-                    }
-                ]
-            },
-            {
                 "key": "field_58a05ceb916fe",
                 "label": "Discographie",
                 "name": "discographie",
@@ -124,7 +44,7 @@
                     {
                         "key": "field_58a05d36916ff",
                         "label": "Image album",
-                        "name": "image",
+                        "name": "image_album",
                         "type": "image",
                         "instructions": "(000 x 000 px - Taille max 2mo)",
                         "required": 0,
@@ -222,6 +142,129 @@
                         "min": "",
                         "max": "",
                         "step": ""
+                    }
+                ]
+            },
+            {
+                "key": "field_58a05b8f4652b",
+                "label": "Galerie m\u00e9dia",
+                "name": "galerie_media",
+                "type": "repeater",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "collapsed": "",
+                "min": 0,
+                "max": 0,
+                "layout": "row",
+                "button_label": "Ajouter un media",
+                "sub_fields": [
+                    {
+                        "key": "field_58ac2416f8457",
+                        "label": "Image ou vid\u00e9o ?",
+                        "name": "image_ou_video",
+                        "type": "radio",
+                        "instructions": "",
+                        "required": 1,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "choices": {
+                            "image": "Image",
+                            "video": "Vid\u00e9o"
+                        },
+                        "allow_null": 0,
+                        "other_choice": 0,
+                        "save_other_choice": 0,
+                        "default_value": "",
+                        "layout": "horizontal",
+                        "return_format": "value"
+                    },
+                    {
+                        "key": "field_58ab1dbde3751",
+                        "label": "Image",
+                        "name": "image_galerie",
+                        "type": "image",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": [
+                            [
+                                {
+                                    "field": "field_58ac2416f8457",
+                                    "operator": "==",
+                                    "value": "image"
+                                }
+                            ]
+                        ],
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "return_format": "array",
+                        "preview_size": "thumbnail",
+                        "library": "all",
+                        "min_width": "",
+                        "min_height": "",
+                        "min_size": "",
+                        "max_width": "",
+                        "max_height": "",
+                        "max_size": "",
+                        "mime_types": ""
+                    },
+                    {
+                        "key": "field_58ab1e08e3753",
+                        "label": "Lien youtube",
+                        "name": "lien_youtube",
+                        "type": "text",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": [
+                            [
+                                {
+                                    "field": "field_58ac2416f8457",
+                                    "operator": "==",
+                                    "value": "video"
+                                }
+                            ]
+                        ],
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": "",
+                        "maxlength": ""
+                    },
+                    {
+                        "key": "field_58ab1df4e3752",
+                        "label": "Description",
+                        "name": "description",
+                        "type": "text",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": "",
+                        "maxlength": ""
                     }
                 ]
             },

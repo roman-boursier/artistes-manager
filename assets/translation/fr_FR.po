@@ -1,33 +1,31 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: test\n"
-"POT-Creation-Date: 2017-02-22 17:57+0100\n"
-"PO-Revision-Date: 2017-02-22 18:00+0100\n"
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2017-02-24 09:36+0100\n"
+"PO-Revision-Date: 2017-02-24 09:36+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
-"Language: en\n"
+"Language: fr_FR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.6\n"
+"X-Generator: Poedit 1.8.11\n"
 "X-Poedit-Basepath: ../..\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __\n"
 "X-Poedit-SearchPath-0: .\n"
-"X-Poedit-SearchPathExcluded-0: .git\n"
+"X-Poedit-SearchPathExcluded-0: advanced-custom-fields-pro\n"
 "X-Poedit-SearchPathExcluded-1: node_modules\n"
-"X-Poedit-SearchPathExcluded-2: bower_components\n"
-"X-Poedit-SearchPathExcluded-3: advanced-custom-fields-pro\n"
-"X-Poedit-SearchPathExcluded-4: vendor\n"
+"X-Poedit-SearchPathExcluded-2: vendor\n"
 
 #: archive-artistes.php:12
-msgid "Artists :"
-msgstr ""
+msgid "Artists : "
+msgstr "Artistes : "
 
-#: archive-artistes.php:23
-msgid "Groups :"
-msgstr ""
+#: archive-artistes.php:23 parts/loop-ensembles.php:6
+msgid "Groups : "
+msgstr "Ensembles : "
 
 #: assets/functions/admin.php:35
 msgid "The RSS Feed is either empty or unavailable."
@@ -247,26 +245,34 @@ msgstr ""
 msgid "Tags:"
 msgstr ""
 
-#: parts/loop-ensembles.php:6
-msgid "Groups"
-msgstr "Ensembles"
-
 #: parts/loop-single-artistes.php:13
 msgid "Biography :"
-msgstr "Biographie"
+msgstr "Biographie : "
 
 #: parts/loop-single-artistes.php:22
 msgid "Média gallery :"
-msgstr "Galerie média"
+msgstr "Galerie média  : "
 
 #: parts/loop-single-artistes.php:52
 msgid "Discography :"
-msgstr "Discographie"
+msgstr "Discographie : "
 
 #: parts/loop-single-artistes.php:74
-msgid "Float"
-msgstr "Agenda"
+msgid "Float : "
+msgstr "Agenda : "
 
 #: parts/loop-single-artistes.php:90
-msgid "Links and downloads"
-msgstr "Liens et téléchargements"
+msgid "Links and downloads : "
+msgstr "Liens et téléchargements : "
+
+#~ msgid "Artists :"
+#~ msgstr "Artistes : "
+
+#~ msgid "Groups :"
+#~ msgstr "Ensembles : "
+
+#~ msgid "Float"
+#~ msgstr "Agenda"
+
+#~ msgid "Links and downloads"
+#~ msgstr "Liens et téléchargements "

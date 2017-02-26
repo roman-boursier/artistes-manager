@@ -2,8 +2,8 @@
 		
 			<article id="post-<?php the_ID(); ?>" <?php post_class(''); ?> role="article">
                                 
-				<section class="featured-image" itemprop="articleBody">
-					<?php the_post_thumbnail('full'); ?>
+				<section class="featured-image" itemprop="articleBody" style="margin-bottom:7px;">
+                                    <a href="<?php the_permalink();?>"><?php the_post_thumbnail(); ?></a>
 				</section> <!-- end article section -->
 			
 				<section class="entry-content" itemprop="articleBody">
@@ -11,8 +11,8 @@
 				</section> <!-- end article section -->
                                 
                                 <header class="article-header">
-                                    <h3 class="title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><strong><?php the_title(); ?></strong></a></h3>
-                                     <?php echo get_the_term_list( $post->ID, 'instruments', '<span>', ' , ', '</span>' ) ?> 
+                                    <h3 class="title" style="margin-bottom:0px;"><strong><?php the_title(); ?></strong></a></h3>
+                                    <?php echo get_the_term_list( $post->ID, 'instruments', '<small>', ' , ', '</small>' ) ?> 
 				</header> <!-- end article header -->	
                                
 								    							

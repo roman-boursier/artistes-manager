@@ -38,15 +38,19 @@ require_once(get_template_directory() . '/assets/functions/custom-post-artistes.
 // require_once(get_template_directory().'/assets/functions/login.php'); 
 // Customize the WordPress admin
 // require_once(get_template_directory().'/assets/functions/admin.php'); 
+
+//Google tools
+require_once(get_template_directory() . '/assets/functions/google-tools.php'); 
+
 // ACF Intégration
 require_once(get_template_directory() . '/assets/functions/acf-plugin-integration.php'); //Plugin
 //require_once(get_template_directory().'/assets/functions/acf-fields-integration.php'); //Plugin
 
-if( function_exists('acf_add_options_page') ) {
-	
+if( function_exists('acf_add_options_page') ) {	
 	acf_add_options_page();
-	
 }
+
+
 
 /*A déplacer ailleurs*/
 function home_height() {
@@ -62,3 +66,27 @@ function home_height() {
     }
 }
 add_action('wp_footer', 'home_height');
+
+function minimize_text(){  
+ob_start(); 
+?>
+    <script>
+   jQuery(document).ready(function($){
+
+    
+    $('a.more').click(function(event){
+        event.preventDefault();
+        //$('this').hide();
+        $('.hide').toggleClass( "show" )       
+    });
+    
+   
+    });
+</script>
+     <?php echo ob_get_clean();
+}
+
+add_action('wp_footer','minimize_text');
+
+
+

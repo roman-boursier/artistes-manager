@@ -1,3 +1,9 @@
+/**********GENERALES*****************/
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;  
+}
+
 /**********MENU**********************/
 header.header {
     width:100%;
@@ -20,6 +26,7 @@ header.header {
     font-size:1em;
 }
 
+
 /*****HEADER CUSTOMISATIONS*******/
 header {
     z-index: 2;
@@ -32,9 +39,8 @@ header {
 }
 .custom-header h1 {
     position:relative;
-    padding: 80px 0px;
+    padding: 100px 0px;
     text-align: center;
-    text-transform: uppercase;
     color: #ffffff;
 }
 
@@ -103,4 +109,8 @@ header {
 }
 .entry-content .row {
     padding:45px 0 0 0;
+}
+
+.show {
+    display:block !important;
 }

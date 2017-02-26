@@ -11,12 +11,12 @@
         background-image:url("<?php echo $images[0]['url'] ?>");
         background-size:cover;
         background-repeat:no-repeat;
-        background-position:center;
+        background-position:center left;
     }
 </style>
 <div style="display:table; width:100%; height:100%; top: 0; position: absolute; z-index: -1;">
-    <div style="display:table-cell; vertical-align: middle; text-align: center;">
-            <h1 style="color: #ffffff;"><?php echo $images[0]['caption']?></h1> 
+    <div style="display:table-cell; width: 980px; vertical-align: middle; text-align: center; ">
+            <h1 style="color: #ffffff; display: inline-block; max-width:800px;"><?php the_field('texte_introduction');?></h1> 
     </div> 
 </div>
    

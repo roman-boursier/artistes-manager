@@ -3,7 +3,7 @@
 $solo_artist = has_term('solo', 'artists-type') ? true : false;
 
 //On ecrit le titre correspondant au type (groupe ou solo)
-echo '<h2>' . __($solo_artist ? 'Groups' : 'Artists', 'joins_wp') . '</h2>';
+echo '<h2>' . __($solo_artist ? 'Groups : ' : 'Artists : ', 'jointswp') . '</h2>';
 
 //On récupère tous les ensemble du site
 $args = array(
@@ -28,7 +28,7 @@ if ($solo_artist) {
             )
         )
     );
-} 
+}
 //Sinon on récupère seulement l'ensemble correpondant à la page
 else {
     $args['p'] = get_the_ID();
@@ -37,20 +37,27 @@ $the_query = new WP_Query($args);
 ?>
 
 <?php if ($the_query->have_posts()): ?>
-    <?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
-        <?php $ensembles = get_field('ensembles'); ?> 
-        <?php foreach ($ensembles as $artiste): 
-            $type_id = $solo_artist ? $ensembles->ID : $artiste->ID;
-            ?>
-            <li>
-                <?php echo get_the_post_thumbnail($type_id, array(50, 50)); ?>
-                <a href="<?php echo get_the_permalink($type_id); ?>"><?php echo get_the_title($type_id); ?></a>
-            </li>
+    
+    <ul class="no-bullet">
+        <?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+            <?php $ensembles = get_field('ensembles'); ?>
             <?php
-            // Si solo , pas besoin de continuer le foreach
-            if ($solo_artist) { break; }
-            ?>
+            foreach ($ensembles as $artiste):
+                $type_id = $solo_artist ? $ensembles->ID : $artiste->ID;
+                ?>
+                <li>
+                <?php echo get_the_post_thumbnail($type_id, array(50, 50)); ?>
+                    
+                    <a href="<?php echo get_the_permalink($type_id); ?>"><strong> <?php echo get_the_title($type_id); ?></strong></a>
+                </li>
+                <?php
+                // Si solo , pas besoin de continuer le foreach
+                if ($solo_artist) {
+                    break;
+                }
+                ?>
         <?php endforeach; ?>      
     <?php endwhile; ?>
+    </ul>
 <?php endif; ?>
 <?php wp_reset_query(); ?>
