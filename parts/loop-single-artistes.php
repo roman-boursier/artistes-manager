@@ -85,18 +85,16 @@
 
             <!-- Agenda -->
             <div class="large-6 columns">
+              <div class="row">
                 <h2><?php echo __('Float : ', 'jointswp'); ?> </h2>
+               </div>
             </div>
 
             <!-- Liens et ensembles ou artistes -->  
             <div class="large-6 columns">
 
                 <!-- Groups -->
-                <div class="row" style="padding-top:0">
-                    <div class="colums">
-                        <?php include('loop-ensembles.php'); ?>
-                    </div>
-                </div>    
+                <?php include('loop-ensembles.php'); ?>
 
                 <!-- Liens -->         
                 <div class="row">
