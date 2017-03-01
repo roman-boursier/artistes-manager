@@ -12,21 +12,25 @@
             <div class="colums">
                 <?php if (get_field('biographie')): ?>
                     <h2> <?php echo __('Biography :', 'jointswp'); ?></h2>
-                   
-                    <?php 
-                    $full = get_field('biographie');
-                    $part_1 = substr($full, 0, 600);;
-                    $part_2 = substr($full, 600);
-                    ?>
-                    <div class="show">
-                         <?php echo $part_1; ?>
-                    </div>
-                    <div class="hide">
-                        <?php echo $part_2 ;?>
-                    </div>
-                    <a class="button more">En savoir plus</a>
-                   
-                    
+                    <?php $biographie = get_field('biographie'); ?>
+                    <?php if (strlen($biographie) > 600): ?>
+                        <?php
+                        $part_1 = substr($biographie, 0, strpos($biographie, ' ', 600)) . " ...";
+                        $part_2 = substr($biographie, strpos($biographie, ' ', 600));
+                        ?>
+                        <div class="show">
+                            <?php echo $part_1; ?>
+                        </div>
+                        <div class="hide">
+                            <?php echo $part_2; ?>
+                        </div>
+                        <a class="button more">
+                            <span><?php echo __('Read more', 'jointswp'); ?></span>
+                            <span><?php //echo __('Close', 'jointswp'); ?></span>
+                        </a>
+                    <?php else: ?>
+                        <?php echo $biographie ?>
+                    <?php endif; ?>      
                 <?php endif; ?>
             </div>
         </div>
@@ -34,7 +38,7 @@
         <!-- GALLERY MEDIA -->
         <div class="row">
             <?php if (have_rows('galerie_media')): ?>
-             <h2> <?php echo __('Média gallery :', 'jointswp') ?></h2>
+                <h2> <?php echo __('Média gallery :', 'jointswp') ?></h2>
                 <div class="columns">
                     <div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit data-auto-play="false" data-options="animInFromLeft:fade-in; animInFromRight:fade-in; animOutToLeft:fade-out; animOutToRight:fade-out;">
                         <ul id="artists-media-galery" class="orbit-container">
@@ -49,7 +53,8 @@
                                         </div> 
                                     <?php else: ?>
                                         <div class="flex-video">
-                                            <?php preg_match('%(?:youtube(?:-nocookie)?\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\.be/)([^"&?/ ]{11})%i', get_sub_field('lien_youtube'), $match); 
+                                            <?php
+                                            preg_match('%(?:youtube(?:-nocookie)?\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\.be/)([^"&?/ ]{11})%i', get_sub_field('lien_youtube'), $match);
                                             $youtube_id = $match[1];
                                             ?>
                                             <iframe width="560" height="315" src="http://www.youtube.com/embed/<?php echo $youtube_id; ?>?enablejsapi=1"   frameborder="0" allowfullscreen></iframe>
@@ -67,7 +72,7 @@
         <!-- DISCOGRAPHY -->
         <div class="row small-up-1 medium-up-2 large-up-3">
             <?php if (have_rows('discographie')): ?>
-             <h2> <?php echo __('Discography :', 'jointswp') ?></h2>
+                <h2> <?php echo __('Discography :', 'jointswp') ?></h2>
                 <?php while (have_rows('discographie')): the_row(); ?>
                     <div class="column column-block">
                         <?php $image_disk = wp_get_attachment_image_src(get_sub_field('image_album'), 'thumbnail'); ?>
@@ -75,8 +80,8 @@
                         <ul style="line-height:1.15em;">
                             <li><small><strong><?php the_sub_field('titre_de_labum'); ?></strong></small></li>
                             <li><small><?php the_sub_field('artistes'); ?></small></li>
-                            <li><small><span style="text-decoration: underline"><?php echo __('Label', 'jointswp')?></span> : <?php the_sub_field('label'); ?></small></li>
-                            <li><small><span style="text-decoration: underline"><?php echo __('Year', 'jointswp')?></span> : <?php the_sub_field('annee_de_parution_'); ?></small></li>
+                            <li><small><span style="text-decoration: underline"><?php echo __('Label', 'jointswp') ?></span> : <?php the_sub_field('label'); ?></small></li>
+                            <li><small><span style="text-decoration: underline"><?php echo __('Year', 'jointswp') ?></span> : <?php the_sub_field('annee_de_parution_'); ?></small></li>
                         </ul>
                     </div>
                 <?php endwhile; ?>
@@ -88,9 +93,9 @@
 
             <!-- Agenda -->
             <div class="large-6 columns">
-              <div class="row">
-                <h2><?php echo __('Float : ', 'jointswp'); ?> </h2>
-               </div>
+                <div class="row">
+                    <h2><?php echo __('Float : ', 'jointswp'); ?> </h2>
+                </div>
             </div>
 
             <!-- Liens et ensembles ou artistes -->  
@@ -122,6 +127,6 @@
         <p class="tags"><?php the_tags('<span class="tags-title">' . __('Tags:', 'jointswp') . '</span> ', ', ', ''); ?></p>	
     </footer> <!-- end article footer -->
 
-    <?php // comments_template();  ?>	
+    <?php // comments_template();     ?>	
 
 </article> <!-- end article -->

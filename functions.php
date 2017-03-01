@@ -51,7 +51,6 @@ if( function_exists('acf_add_options_page') ) {
 }
 
 
-
 /*A déplacer ailleurs*/
 function home_height() {
     if (is_front_page()) {
@@ -67,26 +66,6 @@ function home_height() {
 }
 add_action('wp_footer', 'home_height');
 
-function minimize_text(){  
-ob_start(); 
-?>
-    <script>
-   jQuery(document).ready(function($){
-
-    
-    $('a.more').click(function(event){
-        event.preventDefault();
-        //$('this').hide();
-        $('.hide').toggleClass( "show" )       
-    });
-    
-   
-    });
-</script>
-     <?php echo ob_get_clean();
-}
-
-add_action('wp_footer','minimize_text');
 
 
 

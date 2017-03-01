@@ -1,3 +1,18 @@
+/*Reveal content module*/
+jQuery('a.more').click(function (event) {
+    event.preventDefault();
+    jQuery('.hide').toggleClass("show");
+    
+    jQuery('.btn-text-open').hide();
+    jQuery('.btn-text-close').show();
+    
+  
+});
+
+
+
+
+
 jQuery(document).foundation();
 /*
  These functions make sure WordPress
