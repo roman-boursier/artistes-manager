@@ -2,7 +2,7 @@
 		
 			<article id="post-<?php the_ID(); ?>" <?php post_class(''); ?> role="article">
                                 
-				<section class="featured-image" itemprop="articleBody" style="margin-bottom:7px;">
+				<section class="featured-image" itemprop="articleBody">
                                     <a href="<?php the_permalink();?>"><?php the_post_thumbnail(); ?></a>
 				</section> <!-- end article section -->
 			
@@ -11,7 +11,7 @@
 				</section> <!-- end article section -->
                                 
                                 <header class="article-header">
-                                    <h3 class="title" style="margin-bottom:0px;"><strong><?php the_title(); ?></strong></a></h3>
+                                    <h3 class="title"><strong><?php the_title(); ?></strong></a></h3>
                                     <?php echo get_the_term_list( $post->ID, 'instruments', '<small>', ' , ', '</small>' ) ?> 
 				</header> <!-- end article header -->	
                                

@@ -36,7 +36,7 @@
             <?php if (have_rows('galerie_media')): ?>
              <h2> <?php echo __('Média gallery :', 'jointswp') ?></h2>
                 <div class="columns">
-                    <div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit>
+                    <div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit data-auto-play="false" data-options="animInFromLeft:fade-in; animInFromRight:fade-in; animOutToLeft:fade-out; animOutToRight:fade-out;">
                         <ul id="artists-media-galery" class="orbit-container">
                             <button class="orbit-previous"><span class="show-for-sr">Previous Slide</span> &#9664;&#xFE0E;</button>
                             <button class="orbit-next"><span class="show-for-sr">Next Slide</span> &#9654;&#xFE0E;</button>
@@ -49,7 +49,10 @@
                                         </div> 
                                     <?php else: ?>
                                         <div class="flex-video">
-                                            <iframe width="560" height="315" src="http://www.youtube.com/embed/<?php echo get_sub_field('lien_youtube'); ?>"   frameborder="0" allowfullscreen></iframe>
+                                            <?php preg_match('%(?:youtube(?:-nocookie)?\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\.be/)([^"&?/ ]{11})%i', get_sub_field('lien_youtube'), $match); 
+                                            $youtube_id = $match[1];
+                                            ?>
+                                            <iframe width="560" height="315" src="http://www.youtube.com/embed/<?php echo $youtube_id; ?>?enablejsapi=1"   frameborder="0" allowfullscreen></iframe>
                                         </div>
                                     <?php endif; ?>
 

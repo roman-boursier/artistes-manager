@@ -4,6 +4,7 @@ h1 {
     font-style: italic;  
 }
 
+
 /**********MENU**********************/
 header.header {
     width:100%;
@@ -14,11 +15,24 @@ header.header {
     color:$white;
 }
 
-
 /**********PAGES********************/
+
 /*Home*/
 .home .copyright {
     display:none;
+}
+.home .v-align-container{
+    text-align: center; 
+    h1 { 
+        max-width:800px;
+        color: #ffffff; 
+        display: inline-block; 
+    }
+}
+
+/*Archive artists*/
+.post-type-archive-artistes {
+    .featured-image { margin-bottom:7px; }
 }
 
 /*Archive artists grid*/
@@ -43,7 +57,6 @@ header {
     text-align: center;
     color: #ffffff;
 }
-
 .custom-header h1 > div {
     position: absolute;
     width: 100%;
@@ -52,7 +65,6 @@ header {
     left:0;
     z-index: -1;
 }
-
 .custom-header h1 > div { 
     background-repeat: no-repeat;
     background-size: cover;
@@ -67,12 +79,24 @@ header {
 
 
 /*****************UTILITIES**********************/
-/*fullscreen*/
+
+/*Fullscreen*/
 .fullscreen body {
     overflow-y: hidden;
 }
 .fullscreen, .fullscreen body, .fullscreen .off-canvas-wrapper, .fullscreen .off-canvas-content  {
     height:100%;
+}
+
+/*Alignement vertical*/
+.v-align-container {
+    display:table; 
+    width:100%; 
+    height:100%;
+    > div {
+        display:table-cell; 
+        vertical-align: middle; 
+    }
 }
 
 /*overlay*/

@@ -23,6 +23,110 @@
                 "delay": 0
             },
             {
+                "key": "field_58a05b8f4652b",
+                "label": "Galerie m\u00e9dia",
+                "name": "galerie_media",
+                "type": "repeater",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "collapsed": "",
+                "min": 0,
+                "max": 5,
+                "layout": "row",
+                "button_label": "Ajouter un media",
+                "sub_fields": [
+                    {
+                        "key": "field_58ac2416f8457",
+                        "label": "Image ou vid\u00e9o ?",
+                        "name": "image_ou_video",
+                        "type": "radio",
+                        "instructions": "",
+                        "required": 1,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "choices": {
+                            "image": "Image",
+                            "video": "Vid\u00e9o"
+                        },
+                        "allow_null": 0,
+                        "other_choice": 0,
+                        "save_other_choice": 0,
+                        "default_value": "",
+                        "layout": "horizontal",
+                        "return_format": "value"
+                    },
+                    {
+                        "key": "field_58ab1dbde3751",
+                        "label": "Image",
+                        "name": "image_galerie",
+                        "type": "image",
+                        "instructions": "Poids maximum : 5mb",
+                        "required": 0,
+                        "conditional_logic": [
+                            [
+                                {
+                                    "field": "field_58ac2416f8457",
+                                    "operator": "==",
+                                    "value": "image"
+                                }
+                            ]
+                        ],
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "return_format": "array",
+                        "preview_size": "thumbnail",
+                        "library": "all",
+                        "min_width": "",
+                        "min_height": "",
+                        "min_size": "",
+                        "max_width": "",
+                        "max_height": "",
+                        "max_size": 5,
+                        "mime_types": ""
+                    },
+                    {
+                        "key": "field_58ab1e08e3753",
+                        "label": "Lien youtube",
+                        "name": "lien_youtube",
+                        "type": "text",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": [
+                            [
+                                {
+                                    "field": "field_58ac2416f8457",
+                                    "operator": "==",
+                                    "value": "video"
+                                }
+                            ]
+                        ],
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": "",
+                        "maxlength": ""
+                    }
+                ]
+            },
+            {
                 "key": "field_58a05ceb916fe",
                 "label": "Discographie",
                 "name": "discographie",
@@ -46,7 +150,7 @@
                         "label": "Image album",
                         "name": "image_album",
                         "type": "image",
-                        "instructions": "(000 x 000 px - Taille max 2mo)",
+                        "instructions": "Poids maximum : 5mb",
                         "required": 0,
                         "conditional_logic": 0,
                         "wrapper": {
@@ -55,14 +159,14 @@
                             "id": ""
                         },
                         "return_format": "id",
-                        "preview_size": "thumbnail",
+                        "preview_size": "post-thumbnail",
                         "library": "uploadedTo",
                         "min_width": "",
                         "min_height": "",
                         "min_size": "",
                         "max_width": "",
                         "max_height": "",
-                        "max_size": "",
+                        "max_size": 5,
                         "mime_types": ".jpg , .png"
                     },
                     {
@@ -142,129 +246,6 @@
                         "min": "",
                         "max": "",
                         "step": ""
-                    }
-                ]
-            },
-            {
-                "key": "field_58a05b8f4652b",
-                "label": "Galerie m\u00e9dia",
-                "name": "galerie_media",
-                "type": "repeater",
-                "instructions": "",
-                "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "",
-                    "class": "",
-                    "id": ""
-                },
-                "collapsed": "",
-                "min": 0,
-                "max": 0,
-                "layout": "row",
-                "button_label": "Ajouter un media",
-                "sub_fields": [
-                    {
-                        "key": "field_58ac2416f8457",
-                        "label": "Image ou vid\u00e9o ?",
-                        "name": "image_ou_video",
-                        "type": "radio",
-                        "instructions": "",
-                        "required": 1,
-                        "conditional_logic": 0,
-                        "wrapper": {
-                            "width": "",
-                            "class": "",
-                            "id": ""
-                        },
-                        "choices": {
-                            "image": "Image",
-                            "video": "Vid\u00e9o"
-                        },
-                        "allow_null": 0,
-                        "other_choice": 0,
-                        "save_other_choice": 0,
-                        "default_value": "",
-                        "layout": "horizontal",
-                        "return_format": "value"
-                    },
-                    {
-                        "key": "field_58ab1dbde3751",
-                        "label": "Image",
-                        "name": "image_galerie",
-                        "type": "image",
-                        "instructions": "",
-                        "required": 0,
-                        "conditional_logic": [
-                            [
-                                {
-                                    "field": "field_58ac2416f8457",
-                                    "operator": "==",
-                                    "value": "image"
-                                }
-                            ]
-                        ],
-                        "wrapper": {
-                            "width": "",
-                            "class": "",
-                            "id": ""
-                        },
-                        "return_format": "array",
-                        "preview_size": "thumbnail",
-                        "library": "all",
-                        "min_width": "",
-                        "min_height": "",
-                        "min_size": "",
-                        "max_width": "",
-                        "max_height": "",
-                        "max_size": "",
-                        "mime_types": ""
-                    },
-                    {
-                        "key": "field_58ab1e08e3753",
-                        "label": "Lien youtube",
-                        "name": "lien_youtube",
-                        "type": "text",
-                        "instructions": "",
-                        "required": 0,
-                        "conditional_logic": [
-                            [
-                                {
-                                    "field": "field_58ac2416f8457",
-                                    "operator": "==",
-                                    "value": "video"
-                                }
-                            ]
-                        ],
-                        "wrapper": {
-                            "width": "",
-                            "class": "",
-                            "id": ""
-                        },
-                        "default_value": "",
-                        "placeholder": "",
-                        "prepend": "",
-                        "append": "",
-                        "maxlength": ""
-                    },
-                    {
-                        "key": "field_58ab1df4e3752",
-                        "label": "Description",
-                        "name": "description",
-                        "type": "text",
-                        "instructions": "",
-                        "required": 0,
-                        "conditional_logic": 0,
-                        "wrapper": {
-                            "width": "",
-                            "class": "",
-                            "id": ""
-                        },
-                        "default_value": "",
-                        "placeholder": "",
-                        "prepend": "",
-                        "append": "",
-                        "maxlength": ""
                     }
                 ]
             },
@@ -388,11 +369,30 @@
         "title": "Home page",
         "fields": [
             {
+                "key": "field_58b13e6f74d63",
+                "label": "Texte d'introduction",
+                "name": "texte_introduction",
+                "type": "text",
+                "instructions": "150 caract\u00e8res max",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": 150
+            },
+            {
                 "key": "field_58a9bafb72191",
                 "label": "Images de l'accueil",
                 "name": "images_de_laccueil",
                 "type": "gallery",
-                "instructions": "",
+                "instructions": "Poids maximum : 5mb",
                 "required": 0,
                 "conditional_logic": 0,
                 "wrapper": {
@@ -409,7 +409,7 @@
                 "min_size": "",
                 "max_width": "",
                 "max_height": "",
-                "max_size": "",
+                "max_size": 5,
                 "mime_types": ""
             }
         ],
