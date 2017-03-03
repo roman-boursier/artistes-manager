@@ -36,7 +36,7 @@ $the_query = new WP_Query($args);
     <div class="row">
         <div class="colums">
             <?php echo '<h2>' . __($solo_artist ? 'Groups : ' : 'Artists : ', 'jointswp') . '</h2>'; ?>
-            <ul class="no-bullet">
+            <ul class="no-bullet ensembles">
                 <?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
                     <?php $ensembles = get_field('ensembles'); ?>
                     <?php

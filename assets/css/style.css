@@ -1826,37 +1826,37 @@ h1 {
   font-size: 1.5rem;
   line-height: 1.4;
   margin-top: 0;
-  margin-bottom: 0.5rem; }
+  margin-bottom: 1.3rem; }
 
 h2 {
   font-size: 1.25rem;
   line-height: 1.4;
   margin-top: 0;
-  margin-bottom: 0.5rem; }
+  margin-bottom: 1.3rem; }
 
 h3 {
   font-size: 1.1875rem;
   line-height: 1.4;
   margin-top: 0;
-  margin-bottom: 0.5rem; }
+  margin-bottom: 1.3rem; }
 
 h4 {
   font-size: 1.125rem;
   line-height: 1.4;
   margin-top: 0;
-  margin-bottom: 0.5rem; }
+  margin-bottom: 1.3rem; }
 
 h5 {
   font-size: 1.0625rem;
   line-height: 1.4;
   margin-top: 0;
-  margin-bottom: 0.5rem; }
+  margin-bottom: 1.3rem; }
 
 h6 {
   font-size: 1rem;
   line-height: 1.4;
   margin-top: 0;
-  margin-bottom: 0.5rem; }
+  margin-bottom: 1.3rem; }
 
 @media print, screen and (min-width: 40em) {
   h1 {
@@ -4413,7 +4413,7 @@ NAVIGATION STYLES
 POSTS & CONTENT STYLES
 *********************/
 #content #inner-content {
-  padding: 1rem 0rem; }
+  padding: 2rem 0rem; }
 
 .page-title .vcard {
   border: 0px;
@@ -4740,7 +4740,10 @@ header.header {
   top: 0; }
 
 .menu a {
-  color: #fefefe; }
+  color: #fefefe;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: .85em; }
 
 /**********PAGES********************/
 /*Home*/
@@ -4758,9 +4761,14 @@ header.header {
 .post-type-archive-artistes .featured-image {
   margin-bottom: 7px; }
 
-/*Archive artists grid*/
-.post-type-archive-artistes h3 {
-  font-size: 1em; }
+.post-type-archive-artistes .title {
+  margin-bottom: 0;
+  text-transform: uppercase;
+  font-size: 0.85em; }
+
+/*Artiste seul*/
+.single-artistes .ensembles li {
+  margin-bottom: .8em; }
 
 /*****HEADER CUSTOMISATIONS*******/
 header {
@@ -4790,6 +4798,10 @@ header {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center; }
+
+/*****************FOOTER***********************/
+.copyright {
+  color: #8a8a8a; }
 
 /*****************ORBIT SLIDER********************/
 .orbit {
@@ -4840,8 +4852,14 @@ header {
   margin-left: 0 !important;
   margin-right: 0 !important; }
 
-.entry-content .row {
-  padding: 45px 0 0 0; }
+.row {
+  padding: 0 0 1.5rem 0; }
 
 .show {
   display: block !important; }
+
+hr {
+  margin-bottom: 2.5em; }
+
+h2 {
+  font-weight: 300; }

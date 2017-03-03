@@ -66,6 +66,17 @@ function home_height() {
 }
 add_action('wp_footer', 'home_height');
 
+/* Permet de savoir si il s'agit d'un artiste seul ou d'un ensemble*/
+function is_ensemble() {
+    if (is_singular('artistes')) {
+       return has_term('solo', 'artists-type') ? true : false;
+    }
+}
+add_action('init', 'is_ensemble');
+
+
+
+
 
 
 

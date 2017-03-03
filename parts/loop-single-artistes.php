@@ -11,7 +11,9 @@
         <div class="row">
             <div class="colums">
                 <?php if (get_field('biographie')): ?>
-                    <h2> <?php echo __('Biography :', 'jointswp'); ?></h2>
+                    <h2>
+                        <?php  echo is_ensemble() ?  __('Biography :', 'jointswp') :   __('Présentation :', 'jointswp'); ?>
+                    </h2>
                     <?php $biographie = get_field('biographie'); ?>
                     <?php if (strlen($biographie) > 600): ?>
                         <?php
@@ -75,8 +77,8 @@
                 <h2> <?php echo __('Discography :', 'jointswp') ?></h2>
                 <?php while (have_rows('discographie')): the_row(); ?>
                     <div class="column column-block">
-                        <?php $image_disk = wp_get_attachment_image_src(get_sub_field('image_album'), 'thumbnail'); ?>
-                        <img class="float-left" style="margin-right:10px" src="<?php echo $image_disk[0]; ?>" alt="<?php echo get_the_title(get_sub_field('image_album')) ?>" />
+                        <?php $image_disk = wp_get_attachment_image_src(get_sub_field('image_album'), array(150,150)); ?>
+                        <img class="float-left" style="margin-right:10px" src="<?php echo $image_disk[0]; ?>" alt="<?php echo get_the_title(get_sub_field('image_album')) ?>" width="150"/>
                         <ul style="line-height:1.15em;">
                             <li><small><strong><?php the_sub_field('titre_de_labum'); ?></strong></small></li>
                             <li><small><?php the_sub_field('artistes'); ?></small></li>

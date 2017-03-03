@@ -13,6 +13,9 @@ header.header {
 }
 .menu a {
     color:$white;
+    font-weight: 700; 
+    text-transform:uppercase;
+    font-size:.85em;
 }
 
 /**********PAGES********************/
@@ -33,11 +36,16 @@ header.header {
 /*Archive artists*/
 .post-type-archive-artistes {
     .featured-image { margin-bottom:7px; }
+    .title {
+        margin-bottom:0;
+        text-transform: uppercase;
+        font-size:0.85em;
+    }
 }
 
-/*Archive artists grid*/
-.post-type-archive-artistes h3 {
-    font-size:1em;
+/*Artiste seul*/
+.single-artistes .ensembles li {
+    margin-bottom:.8em;
 }
 
 
@@ -71,7 +79,10 @@ header {
     background-position:center;
 }
 
-
+/*****************FOOTER***********************/
+.copyright {
+    color:$dark-gray;
+}
 /*****************ORBIT SLIDER********************/
 .orbit {
     background:lightgrey;
@@ -131,10 +142,16 @@ header {
     margin-left:0 !important;
     margin-right:0 !important;  
 }
-.entry-content .row {
-    padding:45px 0 0 0;
+.row {
+    padding:0 0 1.5rem 0;
 }
-
 .show {
     display:block !important;
+}
+
+hr {
+    margin-bottom: 2.5em;
+}
+h2 {
+    font-weight: 300;
 }
