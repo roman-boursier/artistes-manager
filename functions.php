@@ -39,45 +39,60 @@ require_once(get_template_directory() . '/assets/functions/custom-post-agenda.ph
 // require_once(get_template_directory().'/assets/functions/login.php'); 
 // Customize the WordPress admin
 // require_once(get_template_directory().'/assets/functions/admin.php'); 
-
 //Google tools
-require_once(get_template_directory() . '/assets/functions/google-tools.php'); 
+require_once(get_template_directory() . '/assets/functions/google-tools.php');
 
 // ACF Intégration
 require_once(get_template_directory() . '/assets/functions/acf-plugin-integration.php'); //Plugin
 //require_once(get_template_directory().'/assets/functions/acf-fields-integration.php'); //Plugin
 
-if( function_exists('acf_add_options_page') ) {	
-	acf_add_options_page();
+if (function_exists('acf_add_options_page')) {
+    acf_add_options_page();
 }
 
 
-/*A déplacer ailleurs*/
+/* A déplacer ailleurs */
+
 function home_height() {
     if (is_front_page()) {
         ob_start();
         ?>
         <script>
-           var htmlElement = document.getElementsByTagName('html')[0];
-               htmlElement.className += ' fullscreen overlay';
+            var htmlElement = document.getElementsByTagName('html')[0];
+            htmlElement.className += ' fullscreen overlay';
         </script>
         <?php
+
         echo ob_get_clean();
     }
 }
+
 add_action('wp_footer', 'home_height');
 
-/* Permet de savoir si il s'agit d'un artiste seul ou d'un ensemble*/
+/* Permet de savoir si il s'agit d'un artiste seul ou d'un ensemble */
+
 function is_ensemble() {
     if (is_singular('artistes')) {
-       return has_term('solo', 'artists-type') ? true : false;
+        return has_term('solo', 'artists-type') ? true : false;
     }
 }
+
 add_action('init', 'is_ensemble');
 
 
 
 
+function custom_query_vars($query) {
+    if (!is_admin() && $query->is_main_query() ) {
+
+        if ( is_post_type_archive( 'agenda') ) {
+            $query->set('meta_key', 'date');
+            $query->set('orderby', 'meta_value_num');
+            $query->set('order', 'DESC');
+        }
+    }
 
 
+}
 
+add_action('pre_get_posts', 'custom_query_vars');
