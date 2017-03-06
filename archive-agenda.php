@@ -9,10 +9,11 @@
             <?php if (have_posts()) : ?>
 
                 <!-- Section des artistes -->
-                <?php while (have_posts()) : the_post(); ?>
-                    <hr>
-                    <?php get_template_part('parts/loop', 'archive-agenda'); ?> 
-                    <hr>
+               <?php $preview_post_id = ''; ?>
+               <?php while (have_posts()) : the_post(); ?>
+                    <?php include(locate_template('parts/loop-archive-agenda.php'));?> 
+                    <?php echo $preview_post; ?>
+                    <?php $preview_post_id = get_the_ID(); ?>
                 <?php endwhile; ?>
 
                 <?php //joints_page_navi(); ?>
