@@ -40,7 +40,7 @@ function custom_post_artistes() {
         'show_ui' => true,
         'query_var' => true,
         'menu_position' => 8, /* this is what order you want it to appear in on the left hand side menu */
-        'menu_icon' => 'dashicons-book', /* the icon for the custom post type menu. uses built-in dashicons (CSS class name) */
+        'menu_icon' => 'dashicons-album', /* the icon for the custom post type menu. uses built-in dashicons (CSS class name) */
         'rewrite' => array('slug' => 'artistes', 'with_front' => true), /* you can specify its url slug */
         'has_archive' => 'artistes', /* you can rename the slug here */
         'capability_type' => 'post',

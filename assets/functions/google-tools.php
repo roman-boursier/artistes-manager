@@ -1,4 +1,12 @@
 <?php
+/* Google map */
+
+function my_acf_init() {
+    acf_update_setting('google_api_key', 'AIzaSyA1LCRpJecyabZFloC_VKOBYeoPpZTYtFw');
+}
+add_action('acf/init', 'my_acf_init');
+
+/* Google fonts */
 
 function fonts() {
     ob_start();
@@ -9,3 +17,5 @@ function fonts() {
 }
 
 add_action('wp_head', 'fonts');
+
+

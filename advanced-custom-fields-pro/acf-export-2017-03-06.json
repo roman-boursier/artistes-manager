@@ -1,5 +1,106 @@
 [
     {
+        "key": "group_58bc40d138a44",
+        "title": "Agenda",
+        "fields": [
+            {
+                "key": "field_58bc419f69222",
+                "label": "Date",
+                "name": "date",
+                "type": "date_time_picker",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "display_format": "d\/m\/Y g:i a",
+                "return_format": "d\/m\/Y g:i a",
+                "first_day": 1
+            },
+            {
+                "key": "field_58bc42d269223",
+                "label": "Date de fin",
+                "name": "date_de_fin",
+                "type": "date_picker",
+                "instructions": "Optionnel, dans le cas ou l'\u00e9v\u00e9nement se d\u00e9roule sur plusieurs jours.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "display_format": "d\/m\/Y",
+                "return_format": "d\/m\/Y",
+                "first_day": 1
+            },
+            {
+                "key": "field_58bc44ee2eb7a",
+                "label": "Lieu",
+                "name": "lieu",
+                "type": "google_map",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "center_lat": "",
+                "center_lng": "",
+                "zoom": "",
+                "height": ""
+            },
+            {
+                "key": "field_58bc49c668b20",
+                "label": "Artistes ou ensembles",
+                "name": "artistes",
+                "type": "relationship",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "post_type": [
+                    "artistes"
+                ],
+                "taxonomy": [],
+                "filters": [
+                    "search",
+                    "taxonomy"
+                ],
+                "elements": "",
+                "min": "",
+                "max": "",
+                "return_format": "object"
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "agenda"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": 1,
+        "description": ""
+    },
+    {
         "key": "group_58a0579b83982",
         "title": "Fiche artistes",
         "fields": [
@@ -21,110 +122,6 @@
                 "toolbar": "basic",
                 "media_upload": 1,
                 "delay": 0
-            },
-            {
-                "key": "field_58a05b8f4652b",
-                "label": "Galerie m\u00e9dia",
-                "name": "galerie_media",
-                "type": "repeater",
-                "instructions": "",
-                "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "",
-                    "class": "",
-                    "id": ""
-                },
-                "collapsed": "",
-                "min": 0,
-                "max": 5,
-                "layout": "row",
-                "button_label": "Ajouter un media",
-                "sub_fields": [
-                    {
-                        "key": "field_58ac2416f8457",
-                        "label": "Image ou vid\u00e9o ?",
-                        "name": "image_ou_video",
-                        "type": "radio",
-                        "instructions": "",
-                        "required": 1,
-                        "conditional_logic": 0,
-                        "wrapper": {
-                            "width": "",
-                            "class": "",
-                            "id": ""
-                        },
-                        "choices": {
-                            "image": "Image",
-                            "video": "Vid\u00e9o"
-                        },
-                        "allow_null": 0,
-                        "other_choice": 0,
-                        "save_other_choice": 0,
-                        "default_value": "",
-                        "layout": "horizontal",
-                        "return_format": "value"
-                    },
-                    {
-                        "key": "field_58ab1dbde3751",
-                        "label": "Image",
-                        "name": "image_galerie",
-                        "type": "image",
-                        "instructions": "Poids maximum : 5mb",
-                        "required": 0,
-                        "conditional_logic": [
-                            [
-                                {
-                                    "field": "field_58ac2416f8457",
-                                    "operator": "==",
-                                    "value": "image"
-                                }
-                            ]
-                        ],
-                        "wrapper": {
-                            "width": "",
-                            "class": "",
-                            "id": ""
-                        },
-                        "return_format": "array",
-                        "preview_size": "thumbnail",
-                        "library": "all",
-                        "min_width": "",
-                        "min_height": "",
-                        "min_size": "",
-                        "max_width": "",
-                        "max_height": "",
-                        "max_size": 5,
-                        "mime_types": ""
-                    },
-                    {
-                        "key": "field_58ab1e08e3753",
-                        "label": "Lien youtube",
-                        "name": "lien_youtube",
-                        "type": "text",
-                        "instructions": "",
-                        "required": 0,
-                        "conditional_logic": [
-                            [
-                                {
-                                    "field": "field_58ac2416f8457",
-                                    "operator": "==",
-                                    "value": "video"
-                                }
-                            ]
-                        ],
-                        "wrapper": {
-                            "width": "",
-                            "class": "",
-                            "id": ""
-                        },
-                        "default_value": "",
-                        "placeholder": "",
-                        "prepend": "",
-                        "append": "",
-                        "maxlength": ""
-                    }
-                ]
             },
             {
                 "key": "field_58a05ceb916fe",
@@ -150,7 +147,7 @@
                         "label": "Image album",
                         "name": "image_album",
                         "type": "image",
-                        "instructions": "Poids maximum : 5mb",
+                        "instructions": "(000 x 000 px - Taille max 2mo)",
                         "required": 0,
                         "conditional_logic": 0,
                         "wrapper": {
@@ -159,14 +156,14 @@
                             "id": ""
                         },
                         "return_format": "id",
-                        "preview_size": "post-thumbnail",
+                        "preview_size": "thumbnail",
                         "library": "uploadedTo",
                         "min_width": "",
                         "min_height": "",
                         "min_size": "",
                         "max_width": "",
                         "max_height": "",
-                        "max_size": 5,
+                        "max_size": "",
                         "mime_types": ".jpg , .png"
                     },
                     {
@@ -246,6 +243,129 @@
                         "min": "",
                         "max": "",
                         "step": ""
+                    }
+                ]
+            },
+            {
+                "key": "field_58a05b8f4652b",
+                "label": "Galerie m\u00e9dia",
+                "name": "galerie_media",
+                "type": "repeater",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "collapsed": "",
+                "min": 0,
+                "max": 0,
+                "layout": "row",
+                "button_label": "Ajouter un media",
+                "sub_fields": [
+                    {
+                        "key": "field_58ac2416f8457",
+                        "label": "Image ou vid\u00e9o ?",
+                        "name": "image_ou_video",
+                        "type": "radio",
+                        "instructions": "",
+                        "required": 1,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "choices": {
+                            "image": "Image",
+                            "video": "Vid\u00e9o"
+                        },
+                        "allow_null": 0,
+                        "other_choice": 0,
+                        "save_other_choice": 0,
+                        "default_value": "",
+                        "layout": "horizontal",
+                        "return_format": "value"
+                    },
+                    {
+                        "key": "field_58ab1dbde3751",
+                        "label": "Image",
+                        "name": "image_galerie",
+                        "type": "image",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": [
+                            [
+                                {
+                                    "field": "field_58ac2416f8457",
+                                    "operator": "==",
+                                    "value": "image"
+                                }
+                            ]
+                        ],
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "return_format": "array",
+                        "preview_size": "thumbnail",
+                        "library": "all",
+                        "min_width": "",
+                        "min_height": "",
+                        "min_size": "",
+                        "max_width": "",
+                        "max_height": "",
+                        "max_size": "",
+                        "mime_types": ""
+                    },
+                    {
+                        "key": "field_58ab1e08e3753",
+                        "label": "Lien youtube",
+                        "name": "lien_youtube",
+                        "type": "text",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": [
+                            [
+                                {
+                                    "field": "field_58ac2416f8457",
+                                    "operator": "==",
+                                    "value": "video"
+                                }
+                            ]
+                        ],
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": "",
+                        "maxlength": ""
+                    },
+                    {
+                        "key": "field_58ab1df4e3752",
+                        "label": "Description",
+                        "name": "description",
+                        "type": "text",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": "",
+                        "maxlength": ""
                     }
                 ]
             },
@@ -369,30 +489,11 @@
         "title": "Home page",
         "fields": [
             {
-                "key": "field_58b13e6f74d63",
-                "label": "Texte d'introduction",
-                "name": "texte_introduction",
-                "type": "text",
-                "instructions": "150 caract\u00e8res max",
-                "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "",
-                    "class": "",
-                    "id": ""
-                },
-                "default_value": "",
-                "placeholder": "",
-                "prepend": "",
-                "append": "",
-                "maxlength": 150
-            },
-            {
                 "key": "field_58a9bafb72191",
                 "label": "Images de l'accueil",
                 "name": "images_de_laccueil",
                 "type": "gallery",
-                "instructions": "Poids maximum : 5mb",
+                "instructions": "",
                 "required": 0,
                 "conditional_logic": 0,
                 "wrapper": {
@@ -409,7 +510,7 @@
                 "min_size": "",
                 "max_width": "",
                 "max_height": "",
-                "max_size": 5,
+                "max_size": "",
                 "mime_types": ""
             }
         ],
