@@ -96,7 +96,7 @@
             <!-- Agenda -->
             <div class="large-6 columns">
                 <div class="row">
-                    <h2><?php echo __('Float : ', 'jointswp'); ?> </h2>
+                    <?php include(locate_template('parts/loop-agenda-single-artiste.php'));?> 
                 </div>
             </div>
 

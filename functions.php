@@ -81,7 +81,7 @@ add_action('init', 'is_ensemble');
 
 
 
-
+/*
 function custom_query_vars($query) {
     if (!is_admin() && $query->is_main_query() ) {
 
@@ -96,3 +96,4 @@ function custom_query_vars($query) {
 }
 
 add_action('pre_get_posts', 'custom_query_vars');
+*/

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2017-03-01 17:14+0100\n"
-"PO-Revision-Date: 2017-03-01 17:17+0100\n"
+"POT-Creation-Date: 2017-03-07 12:12+0100\n"
+"PO-Revision-Date: 2017-03-07 12:12+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -65,26 +65,75 @@ msgstr ""
 msgid "(Edit)"
 msgstr ""
 
-#: assets/functions/custom-post-artistes.php:22
-#: assets/functions/custom-post-artistes.php:23
-msgid "Artists"
+#: assets/functions/custom-post-agenda.php:22
+msgid "Schedule"
+msgstr "Agenda"
+
+#: assets/functions/custom-post-agenda.php:23
+msgid "Date"
 msgstr ""
 
-#: assets/functions/custom-post-artistes.php:24
-msgid "All artists"
-msgstr ""
+#: assets/functions/custom-post-agenda.php:24
+msgid "All dates"
+msgstr "Toutes les dates"
 
+#: assets/functions/custom-post-agenda.php:25
 #: assets/functions/custom-post-artistes.php:25
 msgid "Add New"
-msgstr ""
+msgstr "Ajouter"
 
-#: assets/functions/custom-post-artistes.php:26
-msgid "Add New artist"
-msgstr ""
+#: assets/functions/custom-post-agenda.php:26
+msgid "Add New date"
+msgstr "Nouvelle date"
 
+#: assets/functions/custom-post-agenda.php:27
 #: assets/functions/custom-post-artistes.php:27
 msgid "Edit"
 msgstr ""
+
+#: assets/functions/custom-post-agenda.php:28
+msgid "Edit date"
+msgstr ""
+
+#: assets/functions/custom-post-agenda.php:29
+msgid "New date"
+msgstr ""
+
+#: assets/functions/custom-post-agenda.php:30
+msgid "View dates"
+msgstr ""
+
+#: assets/functions/custom-post-agenda.php:31
+#: assets/functions/custom-post-artistes.php:31
+msgid "Search Post Type"
+msgstr ""
+
+#: assets/functions/custom-post-agenda.php:32
+#: assets/functions/custom-post-artistes.php:32
+msgid "Nothing found in the Database."
+msgstr ""
+
+#: assets/functions/custom-post-agenda.php:33
+#: assets/functions/custom-post-artistes.php:33
+msgid "Nothing found in Trash"
+msgstr ""
+
+#: assets/functions/custom-post-agenda.php:36
+msgid "This is the example date"
+msgstr ""
+
+#: assets/functions/custom-post-artistes.php:22
+#: assets/functions/custom-post-artistes.php:23
+msgid "Artists"
+msgstr "Artistes"
+
+#: assets/functions/custom-post-artistes.php:24
+msgid "All artists"
+msgstr "Tous les artistes"
+
+#: assets/functions/custom-post-artistes.php:26
+msgid "Add New artist"
+msgstr "Ajouter"
 
 #: assets/functions/custom-post-artistes.php:28
 msgid "Edit artist"
@@ -96,18 +145,6 @@ msgstr ""
 
 #: assets/functions/custom-post-artistes.php:30
 msgid "View artists"
-msgstr ""
-
-#: assets/functions/custom-post-artistes.php:31
-msgid "Search Post Type"
-msgstr ""
-
-#: assets/functions/custom-post-artistes.php:32
-msgid "Nothing found in the Database."
-msgstr ""
-
-#: assets/functions/custom-post-artistes.php:33
-msgid "Nothing found in Trash"
 msgstr ""
 
 #: assets/functions/custom-post-artistes.php:36
@@ -235,51 +272,58 @@ msgstr ""
 msgid "The offcanvas sidebar."
 msgstr ""
 
+#: parts/loop-agenda-single-artiste.php:17
+msgid "Float : "
+msgstr "Agenda : "
+
+#: parts/loop-agenda-single-artiste.php:24
+msgid "View all dates"
+msgstr "Voir toutes les dates"
+
 #: parts/loop-archive-grid-artistes.php:10 parts/loop-archive-grid.php:26
 #: parts/loop-archive.php:9
 msgid "Read more..."
 msgstr ""
 
-#: parts/loop-archive.php:13 parts/loop-single-artistes.php:127
+#: parts/loop-archive.php:13 parts/loop-single-artistes.php:129
 #: parts/loop-single.php:15
 msgid "Tags:"
 msgstr ""
 
-#: parts/loop-single-artistes.php:14
+#: parts/loop-single-artistes.php:15
 msgid "Biography :"
 msgstr "Biographie : "
 
-#: parts/loop-single-artistes.php:28
+#: parts/loop-single-artistes.php:15
+msgid "Présentation :"
+msgstr ""
+
+#: parts/loop-single-artistes.php:30
 msgid "Read more"
 msgstr "Lire la suite"
 
-#: parts/loop-single-artistes.php:29
-msgid "Close"
-msgstr "Fermer"
-
-#: parts/loop-single-artistes.php:41
+#: parts/loop-single-artistes.php:43
 msgid "Média gallery :"
 msgstr "Galerie média  : "
 
-#: parts/loop-single-artistes.php:75
+#: parts/loop-single-artistes.php:77
 msgid "Discography :"
 msgstr "Discographie : "
 
-#: parts/loop-single-artistes.php:83
+#: parts/loop-single-artistes.php:85
 msgid "Label"
 msgstr ""
 
-#: parts/loop-single-artistes.php:84
+#: parts/loop-single-artistes.php:86
 msgid "Year"
 msgstr ""
 
-#: parts/loop-single-artistes.php:97
-msgid "Float : "
-msgstr "Agenda : "
-
-#: parts/loop-single-artistes.php:111
+#: parts/loop-single-artistes.php:113
 msgid "Links and downloads : "
 msgstr "Liens et téléchargements : "
+
+#~ msgid "Close"
+#~ msgstr "Fermer"
 
 #~ msgid "Read more :"
 #~ msgstr "Lire la suite"

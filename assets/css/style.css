@@ -4739,7 +4739,7 @@ header.header {
   position: absolute;
   top: 0; }
 
-.menu a {
+header .menu a {
   color: #fefefe;
   font-weight: 700;
   text-transform: uppercase;
@@ -4769,6 +4769,16 @@ header.header {
 /*Artiste seul*/
 .single-artistes .ensembles li {
   margin-bottom: .8em; }
+
+/*Agenda archives*/
+.post-type-archive-agenda .type-agenda .title {
+  font-size: 1em;
+  margin-bottom: .5rem; }
+
+.post-type-archive-agenda .type-agenda .menu.simple {
+  line-height: 0.9; }
+  .post-type-archive-agenda .type-agenda .menu.simple li {
+    margin-right: 0.3rem; }
 
 /*****HEADER CUSTOMISATIONS*******/
 header {
@@ -4858,7 +4868,7 @@ header {
 .show {
   display: block !important; }
 
-hr {
+hr.big {
   margin-bottom: 2.5em; }
 
 h2 {
