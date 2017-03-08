@@ -6,7 +6,7 @@
 	    					</nav>
 	    				</div>
 						<div class="large-12 medium-12 columns text-center">
-							<small class="source-org copyright">&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?>.</small>
+                                                    <small class="source-org copyright">&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?> <a href="/mention-legales">mentions légales</a></small>
 						</div>
 					</div> <!-- end #inner-footer -->
 				</footer> <!-- end .footer -->

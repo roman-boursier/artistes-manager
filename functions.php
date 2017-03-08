@@ -79,21 +79,3 @@ function is_ensemble() {
 
 add_action('init', 'is_ensemble');
 
-
-
-/*
-function custom_query_vars($query) {
-    if (!is_admin() && $query->is_main_query() ) {
-
-        if ( is_post_type_archive( 'agenda') ) {
-            $query->set('meta_key', 'date');
-            $query->set('orderby', 'meta_value_num');
-            $query->set('order', 'DESC');
-        }
-    }
-
-
-}
-
-add_action('pre_get_posts', 'custom_query_vars');
-*/

@@ -45,7 +45,7 @@
             <div class="off-canvas-content" data-off-canvas-content>
 
                 <header class="header" role="banner">
-                    
+
                     <!-- This navs will be applied to the topbar, above all content 
                              To see additional nav styles, visit the /parts directory -->
                     <?php get_template_part('parts/nav', 'offcanvas-topbar'); ?>
@@ -56,20 +56,20 @@
                         <?php
 
                         function custom_header_image() {
-                            if (has_post_thumbnail()) {
-                                return the_post_thumbnail_url('large');
+                            if (is_post_type_archive('agenda')) {
+                                echo '/wp-content/uploads/2017/02/Chagall_Coupe36CoupoleOpera_hd-1-1024x1024.jpg';
                             } else {
-                                return '/images/thumbnail-default.jpg';
+                                return the_post_thumbnail_url('large');
                             }
                         }
                         ?>
                         <h1>
-                            <?php if (is_archive()) : ?> 
-                                 <?php post_type_archive_title(); ?>
+                        <?php if (is_archive()) : ?> 
+                            <?php post_type_archive_title(); ?>
                             <?php else: ?>
                                 <?php the_title(); ?>
                             <?php endif ?>
                             <div class="overlay" style="background-image: url(<?php custom_header_image() ?>);"></div>
-                        </h1> 
+                        </h1>
                     </div> <!-- end article header -->
-                <?php endif; ?>
+<?php endif; ?>

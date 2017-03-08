@@ -4771,6 +4771,9 @@ header .menu a {
   margin-bottom: .8em; }
 
 /*Agenda archives*/
+.post-type-archive-agenda .row {
+  padding: inherit; }
+
 .post-type-archive-agenda .type-agenda .title {
   font-size: 1em;
   margin-bottom: .5rem; }
@@ -4810,7 +4813,7 @@ header {
   background-position: center; }
 
 /*****************FOOTER***********************/
-.copyright {
+.copyright, .copyright > * {
   color: #8a8a8a; }
 
 /*****************ORBIT SLIDER********************/

@@ -49,16 +49,20 @@ header .menu a {
 }
 
 /*Agenda archives*/
-.post-type-archive-agenda .type-agenda {
-    .title{
-        font-size:1em;
-        margin-bottom: .5rem;
-    }
-    .menu.simple {
-       line-height: 0.9;
-       li {
-           margin-right: 0.3rem;  
-       }
+.post-type-archive-agenda {
+    .row { padding:inherit;}
+    .type-agenda {
+        
+        .title{
+            font-size:1em;
+            margin-bottom: .5rem;
+        }
+        .menu.simple {
+            line-height: 0.9;
+            li {
+                margin-right: 0.3rem;  
+            }
+        }
     }
 }
 
@@ -94,7 +98,7 @@ header {
 }
 
 /*****************FOOTER***********************/
-.copyright {
+.copyright, .copyright > * {
     color:$dark-gray;
 }
 /*****************ORBIT SLIDER********************/
@@ -156,7 +160,7 @@ header {
     margin-left:0 !important;
     margin-right:0 !important;  
 }
-.row { padding:0 0 1.5rem 0; }
+.row{ padding:0 0 1.5rem 0; }
 .show { display:block !important; }
 hr.big { margin-bottom: 2.5em; }
 h2 { font-weight: 300; }
