@@ -56,6 +56,7 @@ $foundation-palette: (
   warning: #ffae00,
   alert: #cc4b37,
 );
+$extrem-light-gray: #f6f6f6;
 $light-gray: #e6e6e6;
 $medium-gray: #cacaca;
 $dark-gray: #8a8a8a;
@@ -96,7 +97,7 @@ $grid-row-width: $global-width;
 $grid-column-count: 12;
 $grid-column-gutter: (
   small: 20px,
-  medium: 30px,
+  medium: 40px,
 );
 $grid-column-align-edge: true;
 $block-grid-max: 8;

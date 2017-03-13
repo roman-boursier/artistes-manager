@@ -69,7 +69,11 @@
                             <?php else: ?>
                                 <?php the_title(); ?>
                             <?php endif ?>
-                            <div class="overlay" style="background-image: url(<?php custom_header_image() ?>);"></div>
+                            <?php 
+                             $position = get_field('position_de_limage');
+                             $position_value = ($position)? $position.'%' : '50%';
+                            ?>
+                            <div class="overlay" style="background-image: url(<?php custom_header_image() ?>); background-position: 50% <?php echo $position_value ?>; "></div>
                         </h1>
                     </div> <!-- end article header -->
 <?php endif; ?>

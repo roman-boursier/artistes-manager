@@ -15,7 +15,10 @@ ini_set("xdebug.var_display_max_depth", -1);
             $year = date('Y');
             $first_day_current_year = date('Ymd', mktime(0, 0, 0, 1, 1, $year)); /* Premier jour de l'année courante */
             $first_day_next_year = date('Ymd', mktime(0, 0, 0, 1, 1, $year + 1)); /* Dernier jour de l'année courante */
-
+            
+            /*Utilisé plus tard, lorsque l'on parse le post*/
+            $today = date('Ymd');
+            
             //echo $first_day_current_year . '<br>'.  $first_day_next_year .'<br><br>'; 
 
             /*  Requête sur les posts de l'agenda - On récupère tous les évenements  : 
@@ -59,7 +62,7 @@ ini_set("xdebug.var_display_max_depth", -1);
                 while ($the_query->have_posts()) {
                     $the_query->the_post();
                     $id_evenement = get_the_id();
-
+                    
                     // On parse toutes les dates pour un même évenement*/
                     if (have_rows('details_de_levenement')) {
                         while (have_rows('details_de_levenement')) {
@@ -69,12 +72,14 @@ ini_set("xdebug.var_display_max_depth", -1);
                             $date_fin = get_sub_field('date_fin', false, false);
                             $mois = date_i18n("F", strtotime($date_debut));
                             $lieu = get_sub_field('lieu', false, false);
-                            $lieu_address = ($lieu) ? $lieu['address'] : ''; /*Valeur vide si rien de rentré*/
-                            $liste_evenements[$mois][$id_evenement][$date_debut] = array(
-                                'date' => $date_debut,
-                                'date_fin' => $date_fin,
-                                'lieu' => $lieu_address
-                            );
+                            $lieu_address = ($lieu) ? $lieu['address'] : ''; /* Valeur vide si rien de rentré */
+                            if($date_debut >= $today) {
+                                $liste_evenements[$mois][$id_evenement][$date_debut] = array(
+                                    'date' => $date_debut,
+                                    'date_fin' => $date_fin,
+                                    'lieu' => $lieu_address
+                                );
+                            }
                         }
                     }
                 }
