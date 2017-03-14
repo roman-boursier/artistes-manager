@@ -3365,7 +3365,7 @@ select {
   z-index: 1;
   transition: transform 0.5s ease;
   backface-visibility: hidden;
-  background: #e6e6e6; }
+  background: #f6f6f6; }
   [data-whatinput='mouse'] .off-canvas {
     outline: 0; }
   .off-canvas.is-transition-overlap {
@@ -3380,7 +3380,7 @@ select {
   z-index: 1;
   transition: transform 0.5s ease;
   backface-visibility: hidden;
-  background: #e6e6e6; }
+  background: #f6f6f6; }
   [data-whatinput='mouse'] .off-canvas-absolute {
     outline: 0; }
   .off-canvas-absolute.is-transition-overlap {
@@ -4751,7 +4751,10 @@ header .menu a {
 
 @media screen and (max-width: 39.9375em) {
   .top-bar {
-    background: #0a0a0a; } }
+    background: #0a0a0a; }
+  .top-bar .top-bar-left, .top-bar .top-bar-right {
+    width: auto; }
+  /*Faire mieux*/ }
 
 /**********PAGES********************/
 /*Home*/

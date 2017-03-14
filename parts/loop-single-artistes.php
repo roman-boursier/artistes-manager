@@ -16,8 +16,11 @@
                     <?php $biographie = get_field('biographie'); ?>
                     <?php if (strlen($biographie) > 600): ?>
                         <?php
+                        include( get_template_directory() . '/assets/functions/truncate.php' );
                         $part_1 = substr($biographie, 0, strpos($biographie, ' ', 600)) . " ...";
                         $part_2 = substr($biographie, strpos($biographie, ' ', 600));
+                        /*$part_1 = truncate($biographie, 600);*/
+                        
                         ?>
                         <div class="show">
                             <?php echo $part_1; ?>
