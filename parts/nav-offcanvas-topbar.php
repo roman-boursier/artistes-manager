@@ -6,7 +6,7 @@ $image = get_field('logo_du_site', 'option');
 <div class="top-bar" id="top-bar-menu">
 	<div class="top-bar-left float-left">
 		<ul class="menu">
-			<li><a href="<?php echo home_url(); ?>"><img src="<?php echo $image['url']; ?>" alt="<?php bloginfo('name'); ?>" width="150"/></a></li>
+			<li><a href="<?php echo home_url(); ?>"><img class="logo" src="<?php echo $image['url']; ?>" alt="<?php bloginfo('name'); ?>" /></a></li>
 		</ul>
 	</div>
 	<div class="top-bar-right show-for-medium">

@@ -21,11 +21,18 @@ header .menu a {
         .menu a {
             color:$white;
         }
+        .top-bar .logo {
+            width:150px;
+        }
     }
 }
+
 @include breakpoint(small down){
     .top-bar {
         background:$black;
+        .logo {
+           width:100px; 
+        }
     }
     .top-bar .top-bar-left, .top-bar .top-bar-right {width:auto;}/*Faire mieux*/
 }
@@ -43,8 +50,15 @@ header .menu a {
         max-width:800px;
         color: #ffffff;
         display: inline-block;
+        margin-bottom:0;
     }
 }
+@include breakpoint(small down){
+    .home .v-align-container {
+        height:calc(100% - 84px);
+    }
+}
+
 
 /*Archive artists*/
 .post-type-archive-artistes {
