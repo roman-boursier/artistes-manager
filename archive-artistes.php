@@ -9,25 +9,11 @@
             <?php if (have_posts()) : ?>
 
                 <!-- Section des artistes -->
-                <h2> <?php echo __('Artists : ', 'jointswp') ?></h2><hr>
-                <div class="row small-up-2 medium-up-4 large-up-5">
-                    <?php while (have_posts()) : the_post(); ?> 
-                        <?php if (has_term('solo', 'artists-type')) : ?>
-                            <?php get_template_part('parts/loop', 'archive-grid-artistes'); ?> 
-                        <?php endif ?>
-                    <?php endwhile; ?>
-                </div>
-
+                <?php echo do_shortcode('[liste_artistes type="solo"]');?>
+                
                 <!-- Section des emsembles --> 
-                <h2><?php echo __('Groups : ', 'jointswp') ?></h2><hr>               
-                <div class="row small-up-2 medium-up-4 large-up-5">
-                    <?php while (have_posts()) : the_post(); ?>
-                        <?php if (has_term('ensemble', 'artists-type')) : ?>
-                            <?php get_template_part('parts/loop', 'archive-grid-artistes'); ?>
-                        <?php endif ?>
-                    <?php endwhile; ?>
-                </div>
-
+                <?php echo do_shortcode('[liste_artistes type="ensemble"]');?>
+                
                 <?php //joints_page_navi(); ?>
 
             <?php else : ?>

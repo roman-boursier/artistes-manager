@@ -31,7 +31,7 @@ header .menu a {
     .top-bar {
         background:$black;
         .logo {
-           width:100px; 
+            width:100px; 
         }
     }
     .top-bar .top-bar-left, .top-bar .top-bar-right {width:auto;}/*Faire mieux*/
@@ -41,24 +41,32 @@ header .menu a {
 /**********PAGES********************/
 
 /*Home*/
-.home .copyright {
-    display:none;
-}
-.home .v-align-container{
-    text-align: center;
-    h1 {
-        max-width:800px;
-        color: #ffffff;
-        display: inline-block;
-        margin-bottom:0;
+.home {
+    .v-align-container{
+        text-align: center;
+        h1 {
+            max-width:800px;
+            color: #ffffff;
+            display: inline-block;
+            margin-bottom:0;
+        }
+        .logo {
+            width: 450px;
+           padding: 0em 2em 1em 2em;
+        }
     }
+
+    .copyright {
+        display:none;
+    }
+
 }
+
 @include breakpoint(small down){
     .home .v-align-container {
         height:calc(100% - 84px);
     }
 }
-
 
 /*Archive artists*/
 .post-type-archive-artistes {
@@ -86,7 +94,7 @@ header .menu a {
             font-weight: 600;
         }
     }
-    .type-agenda {
+    article {
         margin-bottom:1em;
         &:not(:last-child){
             border-bottom : 1px solid $medium-gray;
@@ -188,7 +196,7 @@ header {
     z-index: -2;
     content:"";
     background-color:#000;
-    opacity: .6;
+    opacity: .4;
 }
 .image-container::before {
     content: '';

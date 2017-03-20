@@ -5045,9 +5045,6 @@ header .menu a {
 
 /**********PAGES********************/
 /*Home*/
-.home .copyright {
-  display: none; }
-
 .home .v-align-container {
   text-align: center; }
   .home .v-align-container h1 {
@@ -5055,6 +5052,12 @@ header .menu a {
     color: #ffffff;
     display: inline-block;
     margin-bottom: 0; }
+  .home .v-align-container .logo {
+    width: 450px;
+    padding: 0em 2em 1em 2em; }
+
+.home .copyright {
+  display: none; }
 
 @media screen and (max-width: 39.9375em) {
   .home .v-align-container {
@@ -5081,16 +5084,16 @@ header .menu a {
     font-size: 1.2rem;
     font-weight: 600; }
 
-.post-type-archive-agenda .type-agenda {
+.post-type-archive-agenda article {
   margin-bottom: 1em; }
-  .post-type-archive-agenda .type-agenda:not(:last-child) {
+  .post-type-archive-agenda article:not(:last-child) {
     border-bottom: 1px solid #cacaca; }
-  .post-type-archive-agenda .type-agenda .title {
+  .post-type-archive-agenda article .title {
     font-size: 1em;
     margin-bottom: 0rem; }
-  .post-type-archive-agenda .type-agenda .menu.simple {
+  .post-type-archive-agenda article .menu.simple {
     line-height: 0.9; }
-    .post-type-archive-agenda .type-agenda .menu.simple li {
+    .post-type-archive-agenda article .menu.simple li {
       margin-right: 0.3rem; }
 
 /*****HEADER CUSTOMISATIONS*******/
@@ -5165,7 +5168,7 @@ header {
   z-index: -2;
   content: "";
   background-color: #000;
-  opacity: .6; }
+  opacity: .4; }
 
 .image-container::before {
   content: '';

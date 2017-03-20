@@ -15,7 +15,7 @@
 
 // let's create the function for the custom type
 function custom_post_schedule() {
-    // creating (registering) the custom type 
+    // creating (registering) the custom type
     register_post_type('agenda', /* (http://codex.wordpress.org/Function_Reference/register_post_type) */
             // let's now add all the options for this post type
             array('labels' => array(
@@ -58,3 +58,116 @@ function custom_post_schedule() {
 
 // adding the function to the Wordpress init
 add_action('init', 'custom_post_schedule');
+
+
+
+
+
+/*
+ * Shortcode permettant d'afficher la liste des événements
+ */
+
+add_shortcode('liste_evenements', 'display_liste_evenements');
+
+function display_liste_evenements($atts) {
+
+    /* Argument du shortcode */
+    $args = shortcode_atts(array(
+        'posts_type' => 'artistes',
+        'type' => 'solo',
+            ), $atts);
+
+    /* On modifie le comportement de la clause WHERE https://www.advancedcustomfields.com/resources/query-posts-custom-fields/ */
+
+    function my_posts_where($where) {
+        $where = str_replace("meta_key = 'details_de_levenement_%", "meta_key LIKE 'details_de_levenement_%", $where);
+        return $where;
+    }
+
+    add_filter('posts_where', 'my_posts_where');
+
+
+    /* Récupérer l'année */
+    $year = date('Y');
+    $first_day_current_year = date('Ymd', mktime(0, 0, 0, 1, 1, $year)); /* Premier jour de l'année courante */
+    $first_day_next_year = date('Ymd', mktime(0, 0, 0, 1, 1, $year + 1)); /* Dernier jour de l'année courante */
+
+    /* Utilisé plus tard, lorsque l'on parse le post */
+    $today = date('Ymd');
+
+    $query_args = array(
+        'numberposts' => -1,
+        'post_type' => 'agenda',
+        'meta_query' => array(
+            'relation' => 'AND',
+            array(
+                'key' => 'details_de_levenement_%_date',
+                'compare' => '>=',
+                'value' => $first_day_current_year
+            ),
+            array(
+                'key' => 'details_de_levenement_%_date',
+                'compare' => '<=',
+                'value' => $first_day_next_year
+            )
+        )
+    );
+
+
+    $string = '';
+
+    /* Tableau contenant la liste des évènement par mois */
+    $liste_evenements = array();
+    $the_query = new WP_Query($query_args);
+    if ($the_query->have_posts()) {
+        while ($the_query->have_posts()) {
+            $the_query->the_post();
+            $id_evenement = get_the_id();
+
+            // On parse toutes les dates pour un même évenement*/
+            if (have_rows('details_de_levenement')) {
+                while (have_rows('details_de_levenement')) {
+                    the_row();
+                    /* echo $date_debut . get_the_title(). '<br>'; */
+                    $date_debut = get_sub_field('date', false, false);
+                    $date_fin = get_sub_field('date_fin', false, false);
+                    $mois = date_i18n("F", strtotime($date_debut));
+                    $lieu = get_sub_field('lieu', false, false);
+                    $lieu_address = ($lieu) ? $lieu['address'] : ''; /* Valeur vide si rien de rentré */
+                    if ($date_debut >= $today) {
+                        $liste_evenements[$mois][$id_evenement][$date_debut] = array(
+                            'date' => $date_debut,
+                            'date_fin' => $date_fin,
+                            'lieu' => $lieu_address
+                        );
+                    }
+                }
+            }
+        }
+    }
+    wp_reset_query();
+
+    /* On trie le tableau par mois de manière décroissante */
+    $sort = array('janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'julllet', 'août', 'septembre', 'octobre', 'novembre', 'décembre');
+    uksort($liste_evenements, function($value1, $value2) use ($sort) {
+        return array_search($value1, $sort) > array_search($value2, $sort);
+    }
+    );
+    ob_start();
+    include(locate_template('parts/loop-archive-agenda.php'));
+    $string .= ob_get_clean();
+
+    return $string;
+}
+
+/* Ajoute la class du custom posttype si affiché via un shortcode */
+function my_body_class($c) {
+    global $post;
+    if (isset($post->post_content) && has_shortcode($post->post_content, 'liste_evenements')) {
+        $c[] = 'post-type-archive-agenda';
+    }
+    return $c;
+}
+
+add_filter('body_class', 'my_body_class');
+

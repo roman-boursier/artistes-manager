@@ -107,7 +107,50 @@ register_taxonomy('artists-type', array('artistes'), /* if you change the name o
 );
 
 /*
-    	looking for custom meta boxes?
-    	check out this fantastic tool:
-    	https://github.com/jaredatch/Custom-Metaboxes-and-Fields-for-WordPress
-    */
+  looking for custom meta boxes?
+  check out this fantastic tool:
+  https://github.com/jaredatch/Custom-Metaboxes-and-Fields-for-WordPress
+ */
+
+
+/* 
+ * Shortcode permettant d'afficher la liste des artistes et ensemble
+ */
+
+add_shortcode('liste_artistes', 'display_liste_artistes');
+
+function display_liste_artistes($atts) {
+    
+    $args = shortcode_atts( array(
+        'posts_type' => 'artistes',
+        'type' => 'solo',
+    ), $atts );
+    
+    $query_args = array(
+        'post_type' => $args['posts_type'],
+        'tax_query' => array(
+            array(
+                'taxonomy' => 'artists-type',
+                'field' => 'slug',
+                'terms' => $args['type']
+            )
+        )
+    );
+    
+    $titre = ($args['type'] == 'solo') ? __('Artists', 'jointswp') :  __('Ensembles', 'jointswp');
+    $string = '';
+    $query = new WP_Query($query_args);
+    if ($query->have_posts()) {
+        $string .= "<h2>". $titre . "</h2><hr>";
+        $string .= '<div class="row small-up-2 medium-up-4 large-up-5 post-type-archive-artistes">';
+        while ($query->have_posts()) {
+            $query->the_post();
+            ob_start();
+            get_template_part('parts/loop', 'archive-grid-artistes');
+            $string .= ob_get_clean() ;
+        }
+        $string .= '</div>';  
+    }
+    wp_reset_postdata();
+    return $string;
+}
