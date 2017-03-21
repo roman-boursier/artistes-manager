@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2017-03-07 12:12+0100\n"
-"PO-Revision-Date: 2017-03-07 12:12+0100\n"
+"POT-Creation-Date: 2017-03-21 13:08+0100\n"
+"PO-Revision-Date: 2017-03-21 13:08+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -18,14 +18,6 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-0: advanced-custom-fields-pro\n"
 "X-Poedit-SearchPathExcluded-1: node_modules\n"
 "X-Poedit-SearchPathExcluded-2: vendor\n"
-
-#: archive-artistes.php:13
-msgid "Artists : "
-msgstr "Artistes : "
-
-#: archive-artistes.php:22 parts/loop-ensembles.php:38
-msgid "Groups : "
-msgstr "Ensembles : "
 
 #: assets/functions/admin.php:35
 msgid "The RSS Feed is either empty or unavailable."
@@ -122,8 +114,13 @@ msgstr ""
 msgid "This is the example date"
 msgstr ""
 
+#: assets/functions/custom-post-agenda.php:172
+msgid "Float "
+msgstr "Agenda"
+
 #: assets/functions/custom-post-artistes.php:22
 #: assets/functions/custom-post-artistes.php:23
+#: assets/functions/custom-post-artistes.php:140
 msgid "Artists"
 msgstr "Artistes"
 
@@ -228,6 +225,10 @@ msgstr ""
 msgid "New type"
 msgstr ""
 
+#: assets/functions/custom-post-artistes.php:140
+msgid "Ensembles"
+msgstr ""
+
 #: assets/functions/menu.php:5
 msgid "The Main Menu"
 msgstr ""
@@ -272,11 +273,11 @@ msgstr ""
 msgid "The offcanvas sidebar."
 msgstr ""
 
-#: parts/loop-agenda-single-artiste.php:17
+#: parts/loop-agenda-single-artiste.php:31
 msgid "Float : "
 msgstr "Agenda : "
 
-#: parts/loop-agenda-single-artiste.php:24
+#: parts/loop-agenda-single-artiste.php:59
 msgid "View all dates"
 msgstr "Voir toutes les dates"
 
@@ -285,10 +286,14 @@ msgstr "Voir toutes les dates"
 msgid "Read more..."
 msgstr ""
 
-#: parts/loop-archive.php:13 parts/loop-single-artistes.php:129
+#: parts/loop-archive.php:13 parts/loop-single-artistes.php:135
 #: parts/loop-single.php:15
 msgid "Tags:"
 msgstr ""
+
+#: parts/loop-ensembles.php:38
+msgid "Groups : "
+msgstr "Ensembles : "
 
 #: parts/loop-single-artistes.php:15
 msgid "Biography :"
@@ -298,29 +303,32 @@ msgstr "Biographie : "
 msgid "Présentation :"
 msgstr ""
 
-#: parts/loop-single-artistes.php:30
+#: parts/loop-single-artistes.php:32
 msgid "Read more"
 msgstr "Lire la suite"
 
-#: parts/loop-single-artistes.php:43
+#: parts/loop-single-artistes.php:46
 msgid "Média gallery :"
 msgstr "Galerie média  : "
 
-#: parts/loop-single-artistes.php:77
+#: parts/loop-single-artistes.php:80
 msgid "Discography :"
 msgstr "Discographie : "
 
-#: parts/loop-single-artistes.php:85
+#: parts/loop-single-artistes.php:90
 msgid "Label"
 msgstr ""
 
-#: parts/loop-single-artistes.php:86
+#: parts/loop-single-artistes.php:91
 msgid "Year"
 msgstr ""
 
-#: parts/loop-single-artistes.php:113
+#: parts/loop-single-artistes.php:119
 msgid "Links and downloads : "
 msgstr "Liens et téléchargements : "
+
+#~ msgid "Artists : "
+#~ msgstr "Artistes : "
 
 #~ msgid "Close"
 #~ msgstr "Fermer"

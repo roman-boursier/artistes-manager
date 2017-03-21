@@ -101,7 +101,8 @@
 
             <!-- Agenda -->
             <div class="columns large-6">
-                <?php include(locate_template('parts/loop-agenda-single-artiste.php')); ?> 
+                <?php //include(locate_template('parts/loop-agenda-single-artiste.php')); 
+                  echo do_shortcode('[liste_evenements single_artiste="yes"]'); ?>
             </div>
 
             <!-- Liens et ensembles ou artistes -->  

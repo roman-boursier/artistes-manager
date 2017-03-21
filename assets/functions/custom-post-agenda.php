@@ -67,14 +67,17 @@ add_action('init', 'custom_post_schedule');
  * Shortcode permettant d'afficher la liste des événements
  */
 
+ini_set("xdebug.var_display_max_children", -1);
+ini_set("xdebug.var_display_max_data", -1);
+ini_set("xdebug.var_display_max_depth", -1);
+
 add_shortcode('liste_evenements', 'display_liste_evenements');
 
 function display_liste_evenements($atts) {
 
     /* Argument du shortcode */
     $args = shortcode_atts(array(
-        'posts_type' => 'artistes',
-        'type' => 'solo',
+        'single_artiste' => 'no',
             ), $atts);
 
     /* On modifie le comportement de la clause WHERE https://www.advancedcustomfields.com/resources/query-posts-custom-fields/ */
@@ -96,8 +99,10 @@ function display_liste_evenements($atts) {
     $today = date('Ymd');
 
     $query_args = array(
-        'numberposts' => -1,
+        'posts_per_page' => -1,
         'post_type' => 'agenda',
+        'orderby' => 'details_de_levenement_%_date',
+        'order' => 'ASC',
         'meta_query' => array(
             'relation' => 'AND',
             array(
@@ -110,8 +115,19 @@ function display_liste_evenements($atts) {
                 'compare' => '<=',
                 'value' => $first_day_next_year
             )
-        )
+        ),
     );
+
+    /* Si l'on souhaiet afficher seulement les évenement lié à un artiste */
+    if ($args['single_artiste'] === 'yes') {
+        $query_args['posts_per_page'] =  4;
+        
+        $query_args['meta_query'][] = array(
+            'key' => 'artiste_ou_ensemble',
+            'value' => '"' . get_the_ID() . '"',
+            'compare' => 'LIKE'
+        );
+    } 
 
 
     $string = '';
@@ -134,19 +150,25 @@ function display_liste_evenements($atts) {
                     $mois = date_i18n("F", strtotime($date_debut));
                     $lieu = get_sub_field('lieu', false, false);
                     $lieu_address = ($lieu) ? $lieu['address'] : ''; /* Valeur vide si rien de rentré */
-                    if ($date_debut >= $today) {
+                    if ($date_debut >= $today && $args['single_artiste'] === 'no') {
                         $liste_evenements[$mois][$id_evenement][$date_debut] = array(
                             'date' => $date_debut,
                             'date_fin' => $date_fin,
-                            'lieu' => $lieu_address
-                        );
+                            'lieu' => $lieu_address );  
                     }
-                }
+                    else if($args['single_artiste'] === 'yes') {
+                             $liste_evenements[$mois][$id_evenement][$date_debut] = array(
+                            'date' => $date_debut,
+                            'date_fin' => $date_fin,
+                            'lieu' => $lieu_address);
+                        };
+                    }
+                
             }
         }
-    }
+    } 
     wp_reset_query();
-
+  //var_dump($liste_evenements);
     /* On trie le tableau par mois de manière décroissante */
     $sort = array('janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'julllet', 'août', 'septembre', 'octobre', 'novembre', 'décembre');
     uksort($liste_evenements, function($value1, $value2) use ($sort) {
@@ -154,13 +176,21 @@ function display_liste_evenements($atts) {
     }
     );
     ob_start();
+    if ($args['single_artiste'] === 'yes') {
+        $string .= '<h2>' . __('Float ', 'jointswp') . ' ' . date_i18n("Y", strtotime($year)) . '</h2>';
+    }
     include(locate_template('parts/loop-archive-agenda.php'));
-    $string .= ob_get_clean();
+   
 
+    $string .= ob_get_clean();
+     if ($args['single_artiste'] === 'yes') {
+        $string .= '<a href="' . get_post_type_archive_link('agenda') . '" class="button"> ' . __('View all dates', 'jointswp') . '</a>';
+    }
     return $string;
 }
 
 /* Ajoute la class du custom posttype si affiché via un shortcode */
+
 function my_body_class($c) {
     global $post;
     if (isset($post->post_content) && has_shortcode($post->post_content, 'liste_evenements')) {

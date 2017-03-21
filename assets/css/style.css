@@ -5168,7 +5168,7 @@ header {
   z-index: -2;
   content: "";
   background-color: #000;
-  opacity: .4; }
+  opacity: .3; }
 
 .image-container::before {
   content: '';
