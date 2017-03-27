@@ -176,16 +176,17 @@ function display_liste_evenements($atts) {
     }
     );
     ob_start();
-    if ($args['single_artiste'] === 'yes') {
+    
+    if ($args['single_artiste'] === 'yes' && !empty($liste_evenements)) {
         $string .= '<h2>' . __('Float ', 'jointswp') . ' ' . date_i18n("Y", strtotime($year)) . '</h2>';
     }
     include(locate_template('parts/loop-archive-agenda.php'));
-   
 
     $string .= ob_get_clean();
-     if ($args['single_artiste'] === 'yes') {
+    if ($args['single_artiste'] === 'yes' && !empty($liste_evenements)) {
         $string .= '<a href="' . get_post_type_archive_link('agenda') . '" class="button"> ' . __('View all dates', 'jointswp') . '</a>';
     }
+    
     return $string;
 }
 

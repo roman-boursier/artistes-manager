@@ -5073,6 +5073,9 @@ header .menu a {
   font-size: 0.85em; }
 
 /*Artiste seul*/
+.single-artistes .img-disque {
+  border: 1px solid #e6e6e6; }
+
 .single-artistes .ensembles li {
   margin-bottom: .8em; }
 
@@ -5108,7 +5111,7 @@ header {
 
 .custom-header h1 {
   position: relative;
-  padding: 100px 0px;
+  padding: 115px 0px;
   text-align: center;
   color: #ffffff; }
 

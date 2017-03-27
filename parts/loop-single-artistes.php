@@ -52,9 +52,9 @@
                             <?php while (have_rows('galerie_media')): the_row(); ?>
                                 <li class="orbit-slide">
                                     <?php if (get_sub_field('image_ou_video') == 'image'): ?>
+                                         <?php $image = get_sub_field('image_galerie'); ?>
                                         <div>
-                                            <?php $image = get_sub_field('image_galerie'); ?>
-                                            <img class="centered-image" src="<?php echo $image['sizes']['large']; ?>" alt="" />
+                                            <img class="centered-image" src="<?php echo $image['sizes']['large']; ?>" alt="" style="width:100%;"/>
                                         </div> 
                                     <?php else: ?>
                                         <div class="flex-video">
@@ -83,7 +83,7 @@
                 <?php while (have_rows('discographie')): the_row(); ?>
                     <div class="column column-block">
                         <?php $image_disk = wp_get_attachment_image_src(get_sub_field('image_album'), array(150, 150)); ?>
-                        <img class="float-left" style="margin-right:10px" src="<?php echo $image_disk[0]; ?>" alt="<?php echo get_the_title(get_sub_field('image_album')) ?>" width="150"/>
+                        <img class="float-left img-disque" style="margin-right:10px" src="<?php echo $image_disk[0]; ?>" alt="<?php echo get_the_title(get_sub_field('image_album')) ?>" width="150"/>
                         <ul style="line-height:1.15em;">
                             <li><small><strong><?php the_sub_field('titre_de_labum'); ?></strong></small></li>
                             <li><small><?php the_sub_field('artistes'); ?></small></li>
@@ -102,14 +102,13 @@
             <!-- Agenda -->
             <div class="columns large-6">
                 <?php //include(locate_template('parts/loop-agenda-single-artiste.php')); 
-                  echo do_shortcode('[liste_evenements single_artiste="yes"]'); ?>
+                 echo do_shortcode('[liste_evenements single_artiste="yes"]'); ?>
             </div>
 
             <!-- Liens et ensembles ou artistes -->  
             <div class="large-6 columns">
 
                 <!-- Groups -->
-                
                 <?php include('loop-ensembles.php'); ?>
 
                 <!-- Liens -->         

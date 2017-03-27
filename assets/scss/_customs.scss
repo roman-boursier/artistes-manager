@@ -52,7 +52,7 @@ header .menu a {
         }
         .logo {
             width: 450px;
-           padding: 0em 2em 1em 2em;
+            padding: 0em 2em 1em 2em;
         }
     }
 
@@ -80,8 +80,14 @@ header .menu a {
 }
 
 /*Artiste seul*/
-.single-artistes .ensembles li {
-    margin-bottom:.8em;
+.single-artistes {
+    .img-disque {
+        border:1px solid $light-gray;
+    }
+    .ensembles li {
+        margin-bottom:.8em;
+
+    }
 }
 
 /*Agenda archives*/
@@ -126,7 +132,7 @@ header {
 }
 .custom-header h1 {
     position:relative;
-    padding: 100px 0px;
+    padding: 115px 0px;
     text-align: center;
     color: #ffffff;
 }
