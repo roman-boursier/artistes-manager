@@ -184,7 +184,7 @@ function display_liste_evenements($atts) {
 
     $string .= ob_get_clean();
     if ($args['single_artiste'] === 'yes' && !empty($liste_evenements)) {
-        $string .= '<a href="' . get_post_type_archive_link('agenda') . '" class="button"> ' . __('View all dates', 'jointswp') . '</a>';
+        $string .= '<a href="/agenda-2017" class="button"> ' . __('View all dates', 'jointswp') . '</a>';
     }
     
     return $string;

@@ -19,8 +19,7 @@
                         include( get_template_directory() . '/assets/functions/truncate.php' );
                         $part_1 = substr($biographie, 0, strpos($biographie, ' ', 600)) . " ...";
                         $part_2 = substr($biographie, strpos($biographie, ' ', 600));
-                        /*$part_1 = truncate($biographie, 600);*/
-                        
+                        /* $part_1 = truncate($biographie, 600); */
                         ?>
                         <div class="show">
                             <?php echo $part_1; ?>
@@ -30,7 +29,7 @@
                         </div>
                         <a class="button more">
                             <span><?php echo __('Read more', 'jointswp'); ?></span>
-                            <span><?php //echo __('Close', 'jointswp');     ?></span>
+                            <span><?php //echo __('Close', 'jointswp');      ?></span>
                         </a>
                     <?php else: ?>
                         <?php echo $biographie ?>
@@ -52,7 +51,7 @@
                             <?php while (have_rows('galerie_media')): the_row(); ?>
                                 <li class="orbit-slide">
                                     <?php if (get_sub_field('image_ou_video') == 'image'): ?>
-                                         <?php $image = get_sub_field('image_galerie'); ?>
+                                        <?php $image = get_sub_field('image_galerie'); ?>
                                         <div>
                                             <img class="centered-image" src="<?php echo $image['sizes']['large']; ?>" alt="" style="width:100%;"/>
                                         </div> 
@@ -62,7 +61,8 @@
                                             preg_match('%(?:youtube(?:-nocookie)?\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\.be/)([^"&?/ ]{11})%i', get_sub_field('lien_youtube'), $match);
                                             $youtube_id = $match[1];
                                             ?>
-                                            <iframe width="560" height="315" src="http://www.youtube.com/embed/<?php echo $youtube_id; ?>?enablejsapi=1"   frameborder="0" allowfullscreen></iframe>
+                                            <div class="youtube" id="<?php echo $youtube_id; ?>" data-params="modestbranding=1&showinfo=0&controls=1&vq=hd720" style="background-size:cover; background-position:center;">
+                                            </div>
                                         </div>
                                     <?php endif; ?>
 
@@ -102,7 +102,8 @@
             <!-- Agenda -->
             <div class="columns large-6">
                 <?php //include(locate_template('parts/loop-agenda-single-artiste.php')); 
-                 echo do_shortcode('[liste_evenements single_artiste="yes"]'); ?>
+                echo do_shortcode('[liste_evenements single_artiste="yes"]');
+                ?>
             </div>
 
             <!-- Liens et ensembles ou artistes -->  
